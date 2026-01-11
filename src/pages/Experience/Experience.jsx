@@ -3,37 +3,37 @@ import "./Experience.css";
 
 const journey = [
     {
-        title: "Programming Courses & Certifications",
+        title: "Courses & Certifications",
         period: "2023–2025",
         preview: "Supplementary technical courses & self-directed learning",
         details: [
           {
-            label: "IBM Full Stack Software Developer",
+            label: "Full Stack Software Developer",
             url: "https://coursera.org/share/5038679b6eb1651106cd9b0e89f03652",
             meta: "Coursera / IBM"
           },
           {
             label: "Google Data Analytics",
             url: "/assets/files/datacertificate.pdf",
-            meta: "Coursera / IBM"
+            meta: "Google"
           },
           {
-            label: "JavaRush Java Developer Professional",
+            label: "Java Developer Professional",
             url: "/assets/files/javarush.pdf",
             meta: "JavaRush"
           },
-          {
-            label: "Django Application Development with SQL and Databases",
-            url: "https://coursera.org/share/7c5be8cafe1246318f18cccce5d9785f",
-            meta: "Coursera / IBM"
-          },
-          {
-            label: "Developing AI Applications with Python and Flask",
-            url: "https://coursera.org/share/f937d642412a75f5724fa9d985c678b5",
-            meta: "Coursera / IBM"
-          }
+        //   {
+        //     label: "Django Application Development with SQL and Databases",
+        //     url: "https://coursera.org/share/7c5be8cafe1246318f18cccce5d9785f",
+        //     meta: "Coursera / IBM"
+        //   },
+        //   {
+        //     label: "Developing AI Applications with Python and Flask",
+        //     url: "https://coursera.org/share/f937d642412a75f5724fa9d985c678b5",
+        //     meta: "Coursera / IBM"
+        //   }
         ],
-        side: "left",
+        side: "right",
       },
       
     {
@@ -42,42 +42,40 @@ const journey = [
       preview: "Computer Programming & Analysis (Advanced Diploma)",
       details: [
         "High academic performance (GPA: 3.8).",
-        "Team Lead for 2 years on multiple group projects, coordinating task planning, code reviews, and continuous integration.",
-        "Built full-stack web applications using MERN stack, Spring Boot + microservices, ASP.NET. + Js",
-        "Worked with MySQL, PostgreSQL, MongoDB.",
-        "Applied software engineering principles, clean architecture, and version control in collaborative environments.",
+        "Team Lead for 2 years on multiple group projects, coordinating task planning, collaboration and continuous integration.",
+        "Designed full-stack web applications using MERN stack, Spring Boot + microservices, ASP.NET. + Js, and mobile applications with Fluuter/React-Native",
+        "Data modeling, indexing, and query optimization with MySQL, PostgreSQL, MongoDB.",
+        "Hands-on experience with data analysis using Pandas, NumPy, Seaborn, Scikit-learn, Plotly.",
       ],
       side: "left",
     },
   
   
     {
-      title: "GTHost Mobile Application",
-      period: "2025–2026",
-      preview: "Mobile app development for hosting services platform",
-      details: [
-        "Designed and developed a mobile application for the GTHost platform.",
-        "Worked on frontend UI and application logic with a focus on usability and clean architecture.",
-        "Integrated backend services and APIs for real-time data communication.",
-        "Collaborated with team members to align mobile features with backend microservices.",
-        "Gained hands-on experience in mobile-first design and production-level application workflows.",
-      ],
-      side: "right",
-    },
+        title: "GTHost Mobile Application Developer",
+        period: "Sep 2025 – Apr 2026",
+        preview: "Cross-platform mobile app for hosting service management",
+        details: [
+            "Developed a Flutter (Dart) mobile app for Android and iOS enabling GTHost clients to manage servers, billing, and support.",
+            "Integrated REST APIs using Dio with JWT authentication, interceptors, and secure token storage.",
+            "Designed clean architecture reusable UI components.",
+            "Acted as Team Lead and Project Coordinator, managing task distribution and technical alignment between front/backend"
+          ],          
+        side: "right",
+      },      
   
-    {
-      title: "Data Analyst Assistant",
-      period: "Nov 2025",
-      preview: "York Regional Educational Services",
-      details: [
-        "Assisted with data analysis and reporting for educational and volunteer programs.",
-        "Worked with real-world datasets to clean, analyze, and interpret information.",
-        "Created structured reports and visual insights to support decision-making.",
-        "Applied Python, SQL, and spreadsheet-based analytics techniques.",
-        "Strengthened ability to translate raw data into actionable insights.",
-      ],
-      side: "left",
-    },
+      {
+        title: "Data Analyst Assistant",
+        period: "Nov 2025",
+        preview: "York Regional Educational Services",
+        details: [
+          "Supported data analysis and reporting for volunteer engagement programs using real operational datasets.",
+          "Analyzed volunteer weekly/monthly activity, attendance, coaching sessions cancellations, hours logged, and engagement metrics using Python (Pandas, NumPy) and SQL-joints.",
+          "Created analytical reports and visualizations with Tableu, Plotly, Matplotlib and Seaborn",
+          "Worked extensively with spreadsheets (Excel & Google Sheets), including pivot tables, calculated fields, conditional logic, and data validation.",
+        ],
+        side: "left",
+      },
   
     {
       title: "Full-Stack Developer",
@@ -125,11 +123,30 @@ export default function JourneyTimeline() {
       
                   <div className="journey-divider" />
       
-                  <ul>
+                  <ul className="journey-list">
                     {item.details.map((d, i) => (
-                      <li key={i}>{d}</li>
+                        <li key={i} className="journey-li">
+                        {typeof d === "string" ? (
+                            d
+                        ) : (
+                            <a
+                                className="journey-link"
+                                href={d.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                >
+                                <span className="journey-link-oneLine">
+                                    <span className="journey-link-title">{d.label}</span>
+                                    {d.meta && <span className="journey-link-sep"> — </span>}
+                                    {d.meta && <span className="journey-link-meta">{d.meta}</span>}
+                                </span>
+                            </a>
+
+                        )}
+                        </li>
                     ))}
-                  </ul>
+                    </ul>
+
                 </div>
               </div>
             ))}

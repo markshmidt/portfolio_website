@@ -189,3 +189,42 @@
     color: var(--color-text-muted);
     line-height: 1.4;
   }
+  .journey-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .journey-li {
+    margin-bottom: 10px;
+  }
+  
+  .journey-link {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 10px 12px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: var(--color-text-primary);
+    border: 1px solid rgba(255,255,255,0.12);
+    background: rgba(255,255,255,0.04);
+    transition: transform 0.2s ease, background 0.2s ease, border 0.2s ease;
+  }
+  
+  .journey-link:hover {
+    transform: translateX(2px);
+    background: rgba(19, 85, 191, 0.18); /* your accent vibe */
+    border-color: rgba(19, 85, 191, 0.4);
+  }
+  
+  .journey-link-title {
+    font-size: 16px;
+    font-weight: 600;
+  }
+  
+  .journey-link-meta {
+    font-size: 13px;
+    opacity: 0.75;
+  }
+  
