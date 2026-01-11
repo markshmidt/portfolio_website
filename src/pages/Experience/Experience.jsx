@@ -7,24 +7,44 @@ const journey = [
         period: "2023–2025",
         preview: "Supplementary technical courses & self-directed learning",
         details: [
-          "Completed additional programming courses alongside college studies to strengthen core fundamentals.",
-          "Focused on data structures, algorithms, and problem-solving techniques.",
-          "Expanded practical knowledge in Python, Java, and JavaScript beyond academic requirements.",
-          "Strengthened understanding of databases, APIs, and backend logic through hands-on exercises.",
-          "These courses reinforced long-term interest in both software development and data analytics.",
+          {
+            label: "IBM Full Stack Software Developer",
+            url: "https://coursera.org/share/5038679b6eb1651106cd9b0e89f03652",
+            meta: "Coursera / IBM"
+          },
+          {
+            label: "Google Data Analytics",
+            url: "/assets/files/datacertificate.pdf",
+            meta: "Coursera / IBM"
+          },
+          {
+            label: "JavaRush Java Developer Professional",
+            url: "/assets/files/javarush.pdf",
+            meta: "JavaRush"
+          },
+          {
+            label: "Django Application Development with SQL and Databases",
+            url: "https://coursera.org/share/7c5be8cafe1246318f18cccce5d9785f",
+            meta: "Coursera / IBM"
+          },
+          {
+            label: "Developing AI Applications with Python and Flask",
+            url: "https://coursera.org/share/f937d642412a75f5724fa9d985c678b5",
+            meta: "Coursera / IBM"
+          }
         ],
-        side: "right",
+        side: "left",
       },
+      
     {
       title: "George Brown College",
       period: "2023–2026",
       preview: "Computer Programming & Analysis (Advanced Diploma)",
       details: [
-        "Advanced Diploma program focused on full-stack software development and applied computer science.",
-        "Consistently high academic performance (GPA: 3.8).",
-        "Team Lead on multiple group projects, coordinating task planning, code reviews, and integration.",
-        "Built full-stack web applications using React, Node.js, Spring Boot, and Django.",
-        "Worked with relational and NoSQL databases (MySQL, PostgreSQL, MongoDB).",
+        "High academic performance (GPA: 3.8).",
+        "Team Lead for 2 years on multiple group projects, coordinating task planning, code reviews, and continuous integration.",
+        "Built full-stack web applications using MERN stack, Spring Boot + microservices, ASP.NET. + Js",
+        "Worked with MySQL, PostgreSQL, MongoDB.",
         "Applied software engineering principles, clean architecture, and version control in collaborative environments.",
       ],
       side: "left",
