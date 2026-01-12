@@ -67,7 +67,7 @@ const journey = [
       {
         title: "Data Analyst Assistant",
         period: "Nov 2025",
-        preview: "York Regional Educational Services",
+        preview: "York Regional Educational Services volunteering role",
         details: [
           "Supported data analysis and reporting for volunteer engagement programs using real operational datasets.",
           "Analyzed volunteer weekly/monthly activity, attendance, coaching sessions cancellations, hours logged, and engagement metrics using Python (Pandas, NumPy) and SQL-joints.",
@@ -78,15 +78,11 @@ const journey = [
       },
   
     {
-      title: "Full-Stack Developer",
+      title: "Software Developer",
       period: "Jan 2026",
-      preview: "Dance Radar – Web application project",
+      preview: "Dance Radar fullstack development with accent on backend",
       details: [
-        "Developed a full-stack web application focused on event discovery and user interaction.",
-        "Implemented frontend interfaces with modern JavaScript frameworks.",
-        "Built backend logic and APIs to support dynamic data flows.",
-        "Worked with databases and authentication flows.",
-        "Focused on clean UI/UX, scalability, and real-world usability.",
+        "Next.js, Vercel, Typescript, etc."
       ],
       side: "right",
     },

@@ -19,22 +19,65 @@
     flex-direction: column;
   }
   
-  /* Vertical line */
   .journey-line {
     position: absolute;
     left: 50%;
-    top: 0;
+    /* top: 140px;         */
     transform: translateX(-50%);
-    width: 1px;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.25);
+    width: 4px;              /* thicker */
+    height: calc(100%);
+    background: rgba(255, 255, 255);  /* whiter */
+    border-radius: 999px;
   }
+  
+  /* === MAIN DOT (on the line) === */
+  .journey-dot {
+    position: absolute;
+    left: 50%;
+    width: 18px;                   /* bigger */
+    height: 18px;                  /* bigger */
+    border-radius: 50%;
+    background: var(--color-accent);
+    top: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow:
+      0 0 0 5px rgba(255, 255, 255),
+      0 0 18px rgba(255, 255, 255, 0.65); 
+      
+  }
+  .journey-row {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    min-height: 140px; /* critical */
+  }
+  
+  .journey-dot::after {
+    content: "";
+    position: absolute;
+    inset: -10px;                 
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255); ;
+    animation: pulse 2.6s ease-out infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(0.8);
+      opacity: 0.8;
+    }
+    100% {
+      transform: scale(1.5);
+      opacity: 0;
+    }
+  }
+
   
  /* Item wrapper */
 .journey-item {
     position: relative;
     display: flex;
-    align-items: center;
+    align-items: flex-start;;
     width: 100%;
     margin: 30px 0;
   }
@@ -42,11 +85,13 @@
   /* Left / Right positioning */
   .journey-item.left {
     justify-content: flex-end;
+    text-align: left;
     padding-right: 36px;
   }
   
   .journey-item.right {
     justify-content: flex-start;
+    text-align: right;
     padding-left: 36px;
   }
   
@@ -99,19 +144,7 @@
   .journey-item:hover .journey-preview {
     opacity: 0;
   }
-  
-  /* Timeline dot */
-  .journey-dot {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 14px;
-    height: 14px;
-    background: var(--color-bg-main);
-    border: 2px solid var(--color-accent);
-    border-radius: 50%;
-    z-index: 2;
-  }
+
   
   /* Overlay modal */
   .journey-modal {
@@ -132,13 +165,15 @@
     pointer-events: none;
     transition: opacity 0.25s ease, transform 0.25s ease;
     z-index: 5;
+    
   }
   .journey-modal.right {
-    right:  calc(60%);
+    right:  calc(60%);  
   }
   
   .journey-modal.left {
     left:  calc(60%);
+   
   }
   .journey-item:hover .journey-modal {
     transform: translateY(-50%) scale(1);
@@ -186,8 +221,10 @@
   
   .journey-modal li {
     font-size: 16px;
+    text-align: left;   
     color: var(--color-text-muted);
     line-height: 1.4;
+   
   }
   .journey-list {
     list-style: none;
