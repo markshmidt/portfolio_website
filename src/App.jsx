@@ -17,7 +17,6 @@ function App() {
       <Header />
       <Home startAnimations={preloaderDone} />
       <EducationTimeline />
-      <About />
       <Projects />
       <Contact />
       <Footer />
