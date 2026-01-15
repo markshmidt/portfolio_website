@@ -15,10 +15,10 @@ const Contact = () => {
       <div className="contact-info">
         <p>Email: <a href="mailto:masha.shmidt.04@gmail.com">masha.shmidt.04@gmail.com</a></p>
         <p>GitHub: <a href="https://github.com/markshmidt" target="_blank" rel="noopener noreferrer">github.com/markshmidt</a></p>
-        <p>LinkedIn: <a href="https://linkedin.com/in/mariia-shmidt-14a084324" target="_blank" rel="noopener noreferrer">linkedin.com/in/mariia-shmidt-14a084324</a></p>
+        <p>LinkedIn: <a href="https://linkedin.com/in/mariia-shmidt-dev" target="_blank" rel="noopener noreferrer">linkedin.com/in/mariia-shmidt-14a084324</a></p>
       </div>
 
-      <ContactForm />
+      {/* <ContactForm /> */}
     </section>
   );
 };

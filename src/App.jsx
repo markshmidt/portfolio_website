@@ -9,6 +9,7 @@ import Contact from "./pages/Contact/Contact";
 import Footer from "./components/Footer/Footer";
 import EducationTimeline from "./pages/Experience/Experience";
 import Skills from "./pages/Skills/Skills";
+import Interests from "./pages/Interests/Interests";
 function App() {
   const [preloaderDone, setPreloaderDone] = useState(false);
   useHeaderScroll();
@@ -20,6 +21,7 @@ function App() {
       <EducationTimeline />
       <Skills></Skills>
       <Projects />
+      <Interests/>
       <Contact />
       <Footer />
 

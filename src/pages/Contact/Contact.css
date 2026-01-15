@@ -1,35 +1,59 @@
 
 /* CONTACT PAGE STYLING */
+#contact{
+  padding-bottom: 100px;;
+}
 .contact-title {
-    font-size: 50px;
-    color: #00bfff;
-    text-transform: uppercase;
+  font-size: var(--fs-h1);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-text);
+  margin-bottom: 16px;
+  text-align: center;
+  font-size: 42px;
+  font-weight: 500;
+  line-height: 1.35;
+  margin-bottom: 90px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  }
+  .contact-section {
+    min-height: 100vh;
+    padding: 140px 20px 120px;
+   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    margin-top: 100px;
-    margin-bottom: 20px;
   }
   .contact-intro {
-    width:80%;
-    background: rgba(0, 191, 255, 0.1);
-    padding: 30px;
-    border-radius: 15px;
-    font-size: 20px;
-    max-width: 800px;
-    margin: 0 auto 50px;
-    box-shadow: 0 0 15px rgba(0, 191, 255, 0.3);
+    display: flex;
+        flex-direction: column;
+    font-size: var(--fs-body);
+    line-height: 1.7;
+    color: var(--color-text-muted);
+    margin-bottom: 48px;
+    align-items: center;
+    
+    text-align: center;
   }
+  
+  /* Contact details */
   .contact-info {
-    width:80%;
-    background: rgba(0, 191, 255, 0.1);
-    padding: 30px;
-    border-radius: 15px;
-    max-width: 800px;
-    margin: 0 auto 50px;
-    box-shadow: 0 0 15px rgba(0, 191, 255, 0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    font-size: var(--fs-body);
+    color: var(--color-text);
+    align-items: center;
+    text-align: center;
   }
   .contact-info p {
     font-size: 20px;
     line-height: 2;
+    align-items: center;
+    text-align: center;
   }
   .contact-info a {
     color: #00bfff;
