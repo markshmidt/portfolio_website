@@ -1,136 +1,211 @@
+/* =========================
+   PROJECTS (FEATURED STYLE)
+========================= */
 
-/* PROJECTS STYLING */
-body.projects-page {
-    font-size: 20px;
-  }
-  .projects-container {
-    width: 80%;
-    margin: auto;
-    text-align: center;
-    padding-top: 100px;
-  }
-  .projects-container h1 {
+.projects-container {
+  width: min(1200px, 92%);
+  margin: 0 auto;
+  padding: 120px 0 80px;
+  text-align: center;
+}
+
+.projects-container h2 {
+  text-align: center;
+    font-size: 42px;
+    font-weight: 500;
+    line-height: 1.35;
+    margin-bottom: 90px;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
-    font-size: 50px;
-    color: #00b7ff;
-    margin-bottom: 20px;
-  }
-  .projects-description {
-    padding: 20px;
-    backdrop-filter: blur(10px);
-    color: white;
-    width: 80%;
-    text-align: center;
-    background: rgba(0, 191, 255, 0.1);
-    border-radius: 15px;
-    font-size: 20px;
-    max-width: 1000px;
-    margin: 0 auto 50px;
-    box-shadow: 0 0 15px rgba(0, 191, 255, 0.3);
-  }
+  margin-bottom: 24px;
+}
+
+/* short subtitle (keep it subtle like screenshot) */
+.projects-description {
+  max-width: 900px;
+  margin: 0 auto 60px;
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+  border-radius: 0;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* 3 cards in a row */
+.project-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 44px;
+  align-items: stretch;
+}
+
+/* card look */
+.project-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 26px;
+  padding: 18px 18px 22px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22);
+  transition: transform 0.25s ease, box-shadow 0.25s ease,
+    border-color 0.25s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+  border-color: rgba(0, 183, 255, 0.35);
+}
+
+/* image top */
+.project-card img {
+  width: 100%;
+  aspect-ratio: 1/ 1;
+  object-fit: cover;
+  border-radius: 20px;
+  display: block;
+  margin-bottom: 18px;
+
+  /* soft “glow” edge like screenshot */
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+/* text under image */
+.project-info {
+  text-align: left;
+  padding: 0 6px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+
+.project-info h2 {
+  color: #ffffff;
+  font-size: var(--fs-card-title);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin: 6px 0 10px;
+}
+
+.project-info p {
+  font-size: var(--fs-body); /* 18px */
+  line-height: 1.6;
+  color: var(--color-text-muted);
+  margin: 0;
+  flex-grow: 1; 
+}
+
+/* buttons row */
+.project-actions {
+  margin-top: 18px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* base button */
+.project-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 16px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease,
+    background 0.2s ease, border-color 0.2s ease;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* primary = Try it live / View on GitHub */
+.project-btn.primary {
+  background: var(--color-accent);
+  color: var(--color-text);
+  box-shadow: 0 10px 24px rgba(19, 85, 191, 0.35);
+}
+
+.project-btn.primary:hover {
+  background: var(--color-accent-active);
+  transform: translateY(-2px);
+}
+
+.project-btn.secondary {
+  background: transparent;
+  color: var(--color-text);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.project-btn.secondary:hover {
+  border-color: var(--color-accent);
+}
+
+
+/* footer area under cards */
+.projects-footer {
+  margin-top: 46px;
+  display: grid;
+  gap: 14px;
+  justify-items: center;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 14px;
+}
+
+.projects-footer a {
+  color: #00b7ff;
+  text-decoration: none;
+}
+
+.projects-footer a:hover {
+  text-decoration: underline;
+}
+
+/* CTA button to GitHub */
+.project-btn.github-cta {
+  background: transparent;
+  border: 1px solid var(--color-accent);
+  color: var(--color-text);
+  font-size: large;
+}
+
+.project-btn.github-cta:hover {
+  background: rgba(19, 85, 191, 0.15);
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1024px) {
   .project-list {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-    margin-top: 40px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
   }
-  .project-card {
-    display: flex;
-    align-items: center;
-    background: rgba(0, 183, 255, 0.2);
-    border: 2px solid rgba(0, 183, 255, 0.3);
-    border-radius: 15px;
-    padding: 20px;
-    font-size: 20px;
-    width: 80%;
-    max-width: 1000px;
-    box-shadow: 0 4px 20px rgba(0, 183, 255, 0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    opacity: 0;
-    transform: translateY(30px);
-    animation: fadeInUp 0.8s forwards;
+}
+
+@media (max-width: 640px) {
+  .projects-container {
+    padding: 110px 0 70px;
   }
-  .project-card:hover {
-    transform: scale(1.05) translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 191, 255, 0.4);
+
+  .project-list {
+    grid-template-columns: 1fr;
+    gap: 22px;
   }
-  
-  .project-card img {
-    width: 250px;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-right: 20px;
-  }
-  .project-info {
-    flex: 1;
-    text-align: left;
-  }
-  .project-info h2 {
-    font-size: 40px;
-    color: white;
-    margin-bottom: 10px;
-  }
+
   .project-info p {
-    font-size: 20px;
-    color: rgba(255, 255, 255, 0.8);
+    min-height: auto;
   }
-  
-  /* GitHub Button */
-  .project-btn {
-    display: inline-block;
-    background: #00b7ff;
-    color: white;
-    margin-top: 20px;
-    margin-right: 20px;;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 24px;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    box-shadow: 0 5px 15px rgba(0, 191, 255, 0.3);
-    width: 180px;
-    height: 60px;
-    text-align: center;
-    line-height: 60px;
-    transition: all 0.3s ease-in-out;
-    white-space: nowrap;
+
+  .project-actions {
+    justify-content: flex-start;
   }
-  .project-btn:hover {
-    background: #008fcc;
-  }
-  
-    .project-btn:active {
-        transform: scale(0.95);
-    }  
-    @media (max-width: 768px) {
-        .project-container {
-            flex-direction: column;
-            text-align: center;
-        }
-        .project-card {
-            width: 90%;
-            margin: 0 auto;
-            flex-direction: column;
-            text-align: center;
-        }
-        .project-card img {
-            width: 100%;
-            max-width: 280px;
-            height: auto;
-            margin: 0 auto 10px;
-            display: block;
-        }
-        .project-card h5 {
-            font-size: 25px;
-        }
-        .project-card p {
-            font-size: 18px;
-        }
-        .project-card .btn {
-            font-size: 18px;
-            padding: 10px 20px;
-        }
-      }
+}

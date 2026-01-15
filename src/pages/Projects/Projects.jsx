@@ -1,88 +1,135 @@
 // src/components/Projects/Projects.jsx
 import React from "react";
 import "./Projects.css";
+
 const projectsData = [
   {
-    title: "Coffee Island POS Web App",
-    description: "A full-stack Point of Sale (POS) web application built with Django, designed for Coffee Island coffee shop, featuring order management, item configuration, categories, loyalty points, receipt handling, and more",
-    image: "/assets/img/coffeeshopapp.png",
-    github: "https://github.com/markshmidt/coffee-shop-app",
-    play: "https://mariia-shmidt-portfolio/coffeeshopapp"
-  },
-  {
-    title: "Gomoku game",
-    description: "A fully functional web-based Gomoku game featuring PvP and AI game modes, responsive UI in colors of my portfolio website, Java Spring Boot backend + vanilla JS frontend, mobile-friendly interface",
+    title: "Gomoku Game",
+    description:
+      "A fully functional web-based Gomoku game featuring PvP and AI modes. Built with a Java Spring Boot backend and vanilla JavaScript frontend, optimized for desktop and mobile.",
     image: "/assets/img/gomoku.gif",
-    github: "https://github.com/markshmidt/projects/tree/main/JavaProjects/gomoku-web",
+    github:
+      "https://github.com/markshmidt/projects/tree/main/JavaProjects/gomoku-web",
     play: "https://mariia-shmidt-portfolio.com/gomoku",
   },
   {
+    title: "Coffee Island POS",
+    description:
+      "A full-stack Point of Sale (POS) web application built with Django. Includes order management, menu configuration, loyalty points, receipts, and admin analytics.",
+    image: "/assets/img/coffeeshopapp.png",
+    github: "https://github.com/markshmidt/coffee-shop-app",
+    play: "https://mariia-shmidt-portfolio.com/coffeeshopapp",
+  },
+  {
     title: "Kamisado Game",
-    description: "Interactive digital version of the strategic board game Kamisado, using Python object-oriented programming and Pygame library.",
+    description:
+      "Interactive digital version of the strategic board game Kamisado using Python OOP and Pygame.",
     image: "/assets/img/kamisado.gif",
-    github: "https://github.com/markshmidt/projects/tree/main/PythonProjects/kamisado",
+    github:
+      "https://github.com/markshmidt/projects/tree/main/PythonProjects/kamisado",
+  },
+  // {
+  //   title: "Tic-Tac-Toe Game",
+  //   description:
+  //     "A strategic Tic-Tac-Toe game deployed on Tomcat using Java Servlets and JSP, demonstrating HTTP request handling and server-side rendering.",
+  //   image: "/assets/img/tic-tac-toe.gif",
+  //   github:
+  //     "https://github.com/markshmidt/projects/tree/main/JavaProjects/project-servlet",
+  // },
+
+  /* --- UNUSED / ARCHIVED PROJECTS ---
+  
+  {
+    title: "Kamisado Game",
+    description:
+      "Interactive digital version of the strategic board game Kamisado using Python OOP and Pygame.",
+    image: "/assets/img/kamisado.gif",
+    github:
+      "https://github.com/markshmidt/projects/tree/main/PythonProjects/kamisado",
   },
   {
     title: "Racing Game",
-    description: "A fast-paced JavaFX racing game built with the JavaRush graphics engine with focus on dependencies and plugins.",
+    description:
+      "A JavaFX racing game built with JavaRush graphics engine.",
     image: "/assets/img/project-maven.gif",
-    github: "https://github.com/markshmidt/projects/tree/main/JavaProjects/project-maven",
-  },
-  {
-    title: "Tic-Tac-Toe Game",
-    description: "A strategic Tic-Tac-Toe game on Tomcat using servlets and JSP as well as working with HTTP requests and responses.",
-    image: "/assets/img/tic-tac-toe.gif",
-    github: "https://github.com/markshmidt/projects/tree/main/JavaProjects/project-servlet",
+    github:
+      "https://github.com/markshmidt/projects/tree/main/JavaProjects/project-maven",
   },
   {
     title: "HRM & Payroll System",
-    description: "Comprehensive JavaFX-based HRM and Payroll System with employee record management and generating reports.",
+    description:
+      "JavaFX-based HRM and Payroll system with reporting features.",
     image: "/assets/img/management.gif",
-    github: "https://github.com/markshmidt/projects/tree/main/JavaProjects/project-management",
+    github:
+      "https://github.com/markshmidt/projects/tree/main/JavaProjects/project-management",
   },
-  {
-    title: "Airline Reservation System",
-    description: "An OOP-based Airline Reservation System with database storage and exception handling mechanisms.",
-    image: "/assets/img/oop2.gif",
-    github: "https://github.com/markshmidt/projects/tree/main/JavaProjects/project-maven",
-  },
-  {
-    title: "RPG Admin Panel",
-    description: "A CRUD-based web app for managing online game player accounts using JS and jQuery.",
-    image: "/assets/img/adminpanel.gif",
-    github: "https://github.com/markshmidt/projects/tree/main/JavaProjects/project-front",
-  },
-  
 
-
+  */
 ];
 
 const Projects = () => {
   return (
     <section className="projects-container" id="projects">
-      <h1>My Projects</h1>
-      <div className="projects-description">
-      Here are some of the projects I have worked on during my educational journey. My portfolio contains web applications that were build in a team of three people, for example, Airline Reservation System, and programs developed during the individual studying process like Tic-tac-toe game. 
-      You can find all my projects on <a href="https://github.com/markshmidt/projects" style={{ color: '#00b7ff' }}>GitHub</a>..
-      </div>
+      <h2>Featured Projects</h2>
+
+      <p className="projects-description">
+        A curated selection of projects showcasing my experience in full-stack
+        development, backend systems, and interactive web applications.
+      </p>
+
       <div className="project-list">
         {projectsData.map((project, index) => (
           <div className="project-card" key={index}>
             <img src={project.image} alt={project.title} />
+
             <div className="project-info">
               <h2>{project.title}</h2>
               <p>{project.description}</p>
-              <a className="project-btn" href={project.github} target="_blank" rel="noopener noreferrer">
-                GitHub
-              </a>
-              {project.play && (
-        <a className="project-btn" href={project.play} target="_blank" rel="noopener noreferrer">
-          Try it live
-        </a>
-      )}
+
+              <div className="project-actions">
+                {project.play ? (
+                  <a
+                    className="project-btn primary"
+                    href={project.play}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Try it live
+                  </a>
+                ) : (
+                  <a
+                    className="project-btn primary"
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Planned Release
+                  </a>
+                )}
+
+                <a
+                  className="project-btn secondary"
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  GitHub
+                </a>
+              </div>
             </div>
           </div>
         ))}
+      </div>
+
+      <div className="projects-footer">
+          <a
+          className="project-btn github-cta"
+          href="https://github.com/markshmidt/projects"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View all projects on GitHub →
+        </a>
       </div>
     </section>
   );
