@@ -72,10 +72,10 @@ const Projects = () => {
     <section className="projects-container" id="projects">
       <h2>Featured Projects</h2>
 
-      <p className="projects-description">
+      {/* <p className="projects-description">
         A curated selection of projects showcasing my experience in full-stack
         development, backend systems, and interactive web applications.
-      </p>
+      </p> */}
 
       <div className="project-list">
         {projectsData.map((project, index) => (

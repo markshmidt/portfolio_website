@@ -13,6 +13,7 @@ const scrollToSection = (id) => {
   });
 };
 
+
 const Header = () => {
     const headerRef = useRef(null);
     const showBtnRef = useRef(null);
@@ -60,25 +61,25 @@ const Header = () => {
     };
   return (
     <>
-    <header className="header" ref={headerRef}>
+    <header className="header fixed" ref={headerRef}>
   <div className="header-container">
-    <a
-      href="/assets/files/MariiaShmidtResume.pdf"
-      download
-      className="logo-download"
-      title="Download My Resume"
+  <button
+      className="logo-btn"
+      onClick={() => scrollToSection("mainContent")}
+      aria-label="Go to top"
     >
       <img
         src="/assets/img/logo.png"
-        alt="Download Resume"
+        alt="Mariia Shmidt"
         className="logo-img"
       />
-    </a>
+    </button>
     <nav>
       <ul className="nav-links">
   <button onClick={() => scrollToSection("experience")}>Experience</button>
   <button onClick={() => scrollToSection("skills")}>Skills</button>
   <button onClick={() => scrollToSection("projects")}>Projects</button>
+  <button onClick={() => scrollToSection("interests")}>Interests</button>
   <button onClick={() => scrollToSection("contact")}>Contact</button>
       </ul>
     </nav>
