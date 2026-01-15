@@ -8,6 +8,7 @@ import Projects from "./pages/Projects/Projects";
 import Contact from "./pages/Contact/Contact";
 import Footer from "./components/Footer/Footer";
 import EducationTimeline from "./pages/Experience/Experience";
+import Skills from "./pages/Skills/Skills";
 function App() {
   const [preloaderDone, setPreloaderDone] = useState(false);
   useHeaderScroll();
@@ -17,6 +18,7 @@ function App() {
       <Header />
       <Home startAnimations={preloaderDone} />
       <EducationTimeline />
+      <Skills></Skills>
       <Projects />
       <Contact />
       <Footer />

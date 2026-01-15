@@ -3,6 +3,15 @@ import './Header.css';
 import { useEffect, useRef } from 'react';
 import { useHeaderScroll } from './headerScroll.js';
 
+const scrollToSection = (id) => {
+  const el = document.getElementById(id);
+  if (!el) return;
+
+  el.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+  });
+};
 
 const Header = () => {
     const headerRef = useRef(null);
@@ -67,10 +76,10 @@ const Header = () => {
     </a>
     <nav>
       <ul className="nav-links">
-        <a href="#experience">Experience</a>
-  <a href="#projects">Projects</a>
-  <a href="#contact">Contact</a>
-
+  <button onClick={() => scrollToSection("experience")}>Experience</button>
+  <button onClick={() => scrollToSection("skills")}>Skills</button>
+  <button onClick={() => scrollToSection("projects")}>Projects</button>
+  <button onClick={() => scrollToSection("contact")}>Contact</button>
       </ul>
     </nav>
   </div>
