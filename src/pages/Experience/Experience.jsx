@@ -76,7 +76,7 @@ const journey = [
   {
     title: "Software Developer",
     period: "Jan 2026",
-    preview: "Dance Radar — full-stack web application",
+    preview: "SolarPunk & Dance Radar — full-stack web application",
     details: [
       "Developed backend-focused full-stack application using Next.js, TypeScript, and REST APIs.",
       "Deployed production infrastructure using Vercel.",

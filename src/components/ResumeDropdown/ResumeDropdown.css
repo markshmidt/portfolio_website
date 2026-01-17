@@ -77,4 +77,50 @@
     font-size: 12px;
     opacity: 0.8;
   }
-  
+  /* =========================
+   RESUME DROPDOWN — MOBILE
+========================= */
+@media (max-width: 480px) {
+
+  .resume-dropdown {
+    width: 100%;
+  }
+
+  /* Toggle button (Resume button itself) */
+  .resume-toggle {
+    gap: 8px;
+    font-size: 14px;
+  }
+
+  /* Dropdown menu */
+  .resume-menu {
+    top: auto;                    /* disable downwards */
+    bottom: calc(100% + 10px);    /* open upwards */
+    transform: translateX(-50%);
+    min-width: 220px;
+    max-width: 260px;
+    padding: 6px;
+    border-radius: 12px;
+  }
+
+  /* Resume items */
+  .resume-item {
+    gap: 10px;
+    padding: 10px 12px;
+  }
+
+  /* Icon */
+  .resume-item svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  /* Text */
+  .resume-item strong {
+    font-size: 14px;
+  }
+
+  .resume-item small {
+    font-size: 11px;
+  }
+}
