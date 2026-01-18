@@ -266,3 +266,135 @@
     opacity: 0.75;
   }
   
+ /* =========================
+   MOBILE TIMELINE
+========================= */
+
+@media (max-width: 600px) {
+  .journey-section {
+    position: relative;
+  }
+  .journey-item:hover .journey-modal {
+    opacity: 0 !important;
+    pointer-events: none !important;
+    transform: translate(-50%, -50%) scale(0.96) !important;
+  }
+  .journey-item:hover .journey-preview {
+    opacity: 1 !important; /* keep preview visible */
+  }
+
+  /* 2) Force modal to be truly centered in the VIEWPORT */
+
+
+  /* 3) Only ACTIVE item shows modal */
+  .journey-item.active .journey-modal {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transform: translate(-50%, -50%) scale(1) !important;
+  }
+  /* Vertical line on LEFT */
+  .journey-line {
+    left: 14px;
+    transform: none;
+  }
+
+  journey-timeline {
+    padding-left: 24px;
+    padding-right: 16px;
+    overflow-x: hidden; /* CRITICAL */
+  }
+
+  .journey-item {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 44px; /* space from line */
+    box-sizing: border-box;
+  }
+  .journey-item.right {
+    justify-content: flex-start; 
+    text-align: left;
+    padding-left: 50px;
+}
+.journey-item.right {
+  justify-content: flex-start; 
+  text-align: left;
+  padding-left: 50px;
+}
+  /* Dot perfectly centered on line */
+  .journey-dot {
+    left: 16px;
+    top: 24px;
+    transform: translateX(-50%);
+  }
+  /* All content on right */
+  .journey-preview {
+    cursor: pointer;
+  }
+
+  /* Hide default arrow */
+  .journey-mobile-toggle summary {
+    list-style: none;
+  }
+
+  .journey-mobile-toggle summary::-webkit-details-marker {
+    display: none;
+  }
+  
+  /* .journey-item:hover .journey-modal {
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+
+  .journey-item:hover .journey-preview {
+    opacity: 1 !important;
+  } */
+
+  /* CENTERED MODAL */
+  .journey-modal {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0.96);
+
+    width: min(92vw, 560px);
+    max-height: 80vh;
+    overflow-y: auto;
+
+    background: rgba(11, 26, 70, 0.98);
+    backdrop-filter: blur(16px);
+
+    border-radius: 18px;
+    padding: 20px 22px;
+
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.65);
+    border: 1px solid rgba(255,255,255,0.18);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition:
+      opacity 0.25s ease,
+      transform 0.25s ease,
+      visibility 0s linear 0.25s;
+
+    z-index: 9999;
+  }
+
+  /* SHOW ONLY WHEN ACTIVE */
+  .journey-item.active .journey-modal {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+    transition-delay: 0s;
+  }
+
+  /* Kill desktop left/right offsets */
+  .journey-modal.left,
+  .journey-modal.right {
+    left: 50%;
+    right: auto;
+  }
+}

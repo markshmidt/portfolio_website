@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import "./Experience.css";
+import { useState, useEffect, useRef } from "react";
 
 /* =======================
    DATA
@@ -113,6 +114,32 @@ const itemVariants = {
 ======================= */
 
 export default function JourneyTimeline() {
+  const [openIndex, setOpenIndex] = useState(null);
+
+  const timelineRef = useRef(null);
+  const modalRef = useRef(null);
+
+  const isMobile = window.matchMedia("(max-width: 600px)").matches;
+
+  useEffect(() => {
+    if (!isMobile) return;
+  
+    const handleOutside = (e) => {
+      if (openIndex === null) return;
+      if (modalRef.current?.contains(e.target)) return;
+      setOpenIndex(null);
+    };
+  
+    document.addEventListener("pointerdown", handleOutside);
+  
+    return () => {
+      document.removeEventListener("pointerdown", handleOutside);
+    };
+  }, [isMobile, openIndex]);
+  
+  
+
+
   return (
     <motion.section
       className="journey-section"
@@ -124,27 +151,46 @@ export default function JourneyTimeline() {
     >
       <h2 className="journey-title">Industry Experience</h2>
 
-      <motion.div className="journey-timeline">
+      <motion.div className="journey-timeline" ref={timelineRef}>
         <span className="journey-line" />
 
         {journey.map((item, index) => (
-          <motion.div
-            key={index}
-            className={`journey-item ${item.side}`}
-            variants={itemVariants}
-          >
+         <motion.div
+         key={index}
+         className={`journey-item ${item.side} ${isMobile && openIndex === index ? "active" : ""}`}
+         variants={itemVariants}
+         data-mobile={isMobile}
+       >
+        
             {/* Timeline dot */}
             <span className="journey-dot" />
 
             {/* Compact preview */}
-            <div className="journey-preview">
+            <div
+  className="journey-preview"
+  onClick={(e) => {
+    if (!isMobile) return;
+    e.stopPropagation();
+    setOpenIndex(index);
+  }}
+  
+>
+
+
+
               <h3>{item.title}</h3>
               <span className="journey-period">{item.period}</span>
               <p>{item.preview}</p>
             </div>
 
             {/* Hover modal */}
-            <div className={`journey-modal ${item.side}`}>
+            <div
+              ref={openIndex === index ? modalRef : null}
+              className={`journey-modal ${item.side}`}
+              // onClick={(e) => e.stopPropagation()}
+            >
+
+
               <h3>{item.title}</h3>
               <span className="journey-period">{item.period}</span>
 
