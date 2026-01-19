@@ -40,18 +40,36 @@ const ContactForm = () => {
 
   return (
     <form className="contact-form" onSubmit={handleSubmit}>
-      <label>Name</label>
-      <input type="text" name="name" value={formData.name} onChange={handleChange} required />
+  <input
+    type="text"
+    name="name"
+    placeholder="Your Name"
+    value={formData.name}
+    onChange={handleChange}
+    required
+  />
 
-      <label>Email</label>
-      <input type="email" name="email" value={formData.email} onChange={handleChange} required />
+  <input
+    type="email"
+    name="email"
+    placeholder="Your Email"
+    value={formData.email}
+    onChange={handleChange}
+    required
+  />
 
-      <label>Message</label>
-      <textarea name="message" value={formData.message} onChange={handleChange} required />
+  <textarea
+    name="message"
+    placeholder="Your comments"
+    rows="4"
+    value={formData.message}
+    onChange={handleChange}
+    required
+  />
 
-      <button type="submit">Send</button>
-      {status && <p className="form-status">{status}</p>}
-    </form>
+  <button type="submit">Send</button>
+</form>
+
   );
 };
 
