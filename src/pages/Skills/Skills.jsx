@@ -24,7 +24,7 @@ const skills = [
   {
     title: "PYTHON",
     text:
-      "Django, Flask, FastAPI • NumPy, Pandas • Matplotlib/Plotly • Scikit-learn, TensorFlow, PyTorch, Keras ",
+      "Django, Flask, FastAPI • NumPy, Pandas, DuckDB • Matplotlib/Plotly • Scikit-learn, TensorFlow, PyTorch, Keras ",
       icon: PythonIcon,
     
   },
@@ -118,7 +118,7 @@ export default function Skills() {
 
   return (
     <section id="skills" className="skills-section">
-      <h2 className="skills-title">Skills & Experience</h2>
+      <h2 className="skills-title">Skills</h2>
 
       <div className="skills-grid">
         {skills.map((skill, i) => (
