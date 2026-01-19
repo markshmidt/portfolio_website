@@ -7,7 +7,61 @@ import { useState, useEffect, useRef } from "react";
    DATA
 ======================= */
 
-const journey = [
+const journey = [ 
+  {
+  title: "Fullstack Developer",
+  period: "Jan 2026",
+  preview: "SolarPunk & Dance Radar — full-stack web application",
+  details: [
+    "Developed full-stack application using Next.js, TypeScript, and REST APIs. under mentorship of senior developer",
+    "Deployed production infrastructure using Vercel + GitHub workflow.",
+    "Integrated Open Graph metadata and dynamic previews to improve link sharing and SEO across social platforms.",
+    "Implemented analytics and user interaction tracking using PostHog, and worked with MongoDB for data storage, schema updates, and database migrations.",
+    "Collaborated on code reviews, debugging, and architectural decisions, gaining experience with scalable system design and maintainable codebases."
+  
+  ],
+  side: "right",
+},
+{
+  title: "Data Analyst Assistant",
+  period: "Nov 2025",
+  preview: "York Regional Educational Services (Volunteer Role)",
+  details: [
+    "Supported data analysis and reporting for volunteer engagement programs using real operational datasets.", 
+    "Analyzed volunteer weekly/monthly activity, attendance, coaching sessions cancellations, hours logged, and engagement metrics using Python (Pandas, NumPy) and SQL-joints.", 
+    "Created analytical reports and visualizations with Tableu, Plotly, Matplotlib and Seaborn", 
+    "Worked extensively with spreadsheets (Excel & Google Sheets), including pivot tables, calculated fields, conditional logic, and data validation."
+  
+  ],
+  side: "left",
+},
+{
+  title: "GTHost Mobile Application Developer",
+  period: "Sep 2025 – Apr 2026",
+  preview: "Cross-platform mobile app for hosting service management",
+  details: [
+    "Developed Flutter (Dart) mobile application for Android and iOS.",
+    "Implemented REST API integration using Dio with JWT authentication and secure token handling.",
+    "Designed clean architecture and reusable UI components.",
+    "Team Lead and Project Coordinator — aligned frontend and backend development.",
+  ],
+  side: "right",
+},
+{
+  title: "George Brown College",
+  period: "2023–2026",
+  preview: "Computer Programming & Analysis (Advanced Diploma)",
+  details: [
+    "High academic performance (GPA: 3.8). Five times Dean's List of Honor Laureate.",
+    "Team Lead for 2 years on multiple group projects, coordinating planning & collaboration.",
+    "Designed full-stack systems using MERN stack, Spring Boot (microservices), ASP.NET, and JavaScript.",
+    "Developed mobile applications using Flutter and React Native.",
+    "Data modeling, indexing, and optimization with MySQL, PostgreSQL, and MongoDB.",
+    "Applied data analysis techniques using Pandas, NumPy, Seaborn, Scikit-learn, and Plotly.",
+  ],
+  side: "left",
+},
+
   {
     title: "Courses & Certifications",
     period: "2023–2025",
@@ -31,60 +85,7 @@ const journey = [
     ],
     side: "right",
   },
-
-  {
-    title: "George Brown College",
-    period: "2023–2026",
-    preview: "Computer Programming & Analysis (Advanced Diploma)",
-    details: [
-      "High academic performance (GPA: 3.8).",
-      "Team Lead for 2 years on multiple group projects, coordinating planning, collaboration, and continuos integration.",
-      "Designed full-stack systems using MERN stack, Spring Boot (microservices), ASP.NET, and JavaScript.",
-      "Developed mobile applications using Flutter and React Native.",
-      "Data modeling, indexing, and optimization with MySQL, PostgreSQL, and MongoDB.",
-      "Applied data analysis techniques using Pandas, NumPy, Seaborn, Scikit-learn, and Plotly.",
-    ],
-    side: "left",
-  },
-
-  {
-    title: "GTHost Mobile Application Developer",
-    period: "Sep 2025 – Apr 2026",
-    preview: "Cross-platform mobile app for hosting service management",
-    details: [
-      "Developed Flutter (Dart) mobile application for Android and iOS.",
-      "Implemented REST API integration using Dio with JWT authentication and secure token handling.",
-      "Designed clean architecture and reusable UI components.",
-      "Team Lead and Project Coordinator — aligned frontend and backend development.",
-    ],
-    side: "right",
-  },
-
-  {
-    title: "Data Analyst Assistant",
-    period: "Nov 2025",
-    preview: "York Regional Educational Services (Volunteer Role)",
-    details: [
-      "Supported data analysis and reporting for volunteer engagement programs using real operational datasets.", 
-      "Analyzed volunteer weekly/monthly activity, attendance, coaching sessions cancellations, hours logged, and engagement metrics using Python (Pandas, NumPy) and SQL-joints.", 
-      "Created analytical reports and visualizations with Tableu, Plotly, Matplotlib and Seaborn", 
-      "Worked extensively with spreadsheets (Excel & Google Sheets), including pivot tables, calculated fields, conditional logic, and data validation."
-    
-    ],
-    side: "left",
-  },
-
-  {
-    title: "Software Developer",
-    period: "Jan 2026",
-    preview: "SolarPunk & Dance Radar — full-stack web application",
-    details: [
-      "Developed backend-focused full-stack application using Next.js, TypeScript, and REST APIs.",
-      "Deployed production infrastructure using Vercel.",
-      "Focused on scalability, data flows, and maintainable backend architecture.",
-    ],
-    side: "right",
-  },
+ 
 ];
 
 /* =======================
@@ -187,7 +188,7 @@ export default function JourneyTimeline() {
             <div
               ref={openIndex === index ? modalRef : null}
               className={`journey-modal ${item.side}`}
-              // onClick={(e) => e.stopPropagation()}
+              onClick={(e) => e.stopPropagation()}
             >
 
 
