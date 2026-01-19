@@ -1,93 +1,87 @@
-import React, { useEffect } from "react";
+import { useState } from "react";
 import "./Interests.css";
-const ChessIcon = () => (
-    <svg viewBox="0 0 24 24" className="interest-icon">
-      <path d="M7 21h10v-2H7v2Zm2-4h6l-1-5 2-3V7a3 3 0 1 0-6 0v1l2 3-1 5Z" />
-    </svg>
-  );
-  
-  const BookIcon = () => (
-    <svg viewBox="0 0 24 24" className="interest-icon">
-      <path d="M4 5a3 3 0 0 1 3-3h12v18H7a3 3 0 0 0-3 3V5Z" />
-      <path d="M7 2v18" />
-    </svg>
-  );
-  
-  const SkateIcon = () => (
-    <svg viewBox="0 0 24 24" className="interest-icon">
-      <path d="M3 14h13l3-4h2" />
-      <path d="M6 18a1 1 0 1 0 0 .01" />
-      <path d="M11 18a1 1 0 1 0 0 .01" />
-      <path d="M16 18a1 1 0 1 0 0 .01" />
-    </svg>
-  );
-  
-const interests = [
+
+const facts = [
   {
-    title: "Chess ♟️",
-    text: "I enjoy strategy and pattern recognition — chess is my favorite way to train focus, planning, and calm decision-making.",
-    tag: "Strategy mindset",
+    title: "Chess",
+    content:
+      "I enjoy strategic thinking, long-term planning, and measuring progress over time (yes, I track ELO).",
   },
   {
-    title: "Reading 📚",
-    text: "Mostly tech + psychology + fiction. I like turning ideas into notes, systems, and better habits (and yes — I still love paper books).",
-    tag: "Curiosity & learning",
+    title: "Reading",
+    content:
+      "Mostly tech, psychology, and fiction. I like turning ideas into notes, systems, and better habits (and yes — I still love paper books).",
   },
   {
-    title: "Figure Skating ⛸️",
-    text: "I love the mix of discipline and creativity — consistent practice, small improvements, and performing under pressure.",
-    tag: "Consistency",
+    title: "Figure Skating",
+    content:
+      "I love the mix of discipline and creativity — consistent practice, small improvements, and performing under pressure. I also have a first-class degree in figure skating.",
+  },
+  {
+    title: "Movies",
+    content:
+      "Quiet evenings with movies recharge me. Favorite genres include detective stories and science fiction — both train logical thinking.",
   },
 ];
 
 export default function Interests() {
-  useEffect(() => {
-    const els = document.querySelectorAll(".reveal");
-    const obs = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) {
-            e.target.classList.add("active");
-            obs.unobserve(e.target);
-          }
-        });
-      },
-      { threshold: 0.15 }
-    );
+  const [openItems, setOpenItems] = useState(new Set());
 
-    els.forEach((el) => obs.observe(el));
-    return () => obs.disconnect();
-  }, []);
+  const toggle = (index) => {
+    setOpenItems((prev) => {
+      const next = new Set(prev);
+      next.has(index) ? next.delete(index) : next.add(index);
+      return next;
+    });
+  };
 
   return (
-    <section className="interests" id="interests">
-      <div className="interests-inner">
-        <h2 className="interests-title reveal">Beyond Code</h2>
+    <section className="facts-section" id="interests">
+      <h2 className="facts-title">SOME FACTS ABOUT ME</h2>
 
-        <p className="interests-subtitle reveal">
-          A few things that keep me curious, focused, and motivated — and that
-          surprisingly help my work as a developer.
-        </p>
+      <div className="facts-grid">
+        {/* LEFT */}
+        <div className="facts-left">
+          <p className="facts-intro">
+            There are a few things that keep me curious, focused, and motivated —
+            and that, oddly enough, help me work as a developer.
+          </p>
 
-        <div className="interests-grid">
-          {interests.map((item, idx) => (
-            <article
-              key={item.title}
-              className={`interest-card reveal delay-${idx + 1}`}
-            >
-              <div className="interest-top">
-                <h2>{item.title}</h2>
-                <span className="interest-tag">{item.tag}</span>
-              </div>
-              <p>{item.text}</p>
-            </article>
-          ))}
+          <div className="fun-facts">
+            <h3>Fun facts:</h3>
+            <ul>
+              <li>I love building UI that feels “smooth” like skating.</li>
+              <li>I enjoy debugging because it feels like solving puzzles.</li>
+              <li>I’m happiest when I can measure progress (stats, charts, or ELO).</li>
+            </ul>
+          </div>
         </div>
 
-        <div className="interests-facts reveal">
-          <div className="fact-pill">☕ Fun fact: I love building UI that feels “smooth” like skating.</div>
-          <div className="fact-pill">🧩 I’m the person who enjoys debugging because it feels like puzzles.</div>
-          <div className="fact-pill">🎯 I’m happiest when I can measure progress (stats, charts, or ELO).</div>
+        {/* RIGHT */}
+        <div className="facts-right">
+          {facts.map((item, index) => {
+            const isOpen = openItems.has(index);
+
+            return (
+              <div key={item.title} className="accordion-item">
+                <button
+                  className="accordion-header"
+                  onClick={() => toggle(index)}
+                >
+                  <span className={`accordion-icon ${isOpen ? "is-open" : ""}`}>
+                  +
+                  </span>
+                  <span className="accordion-title">{item.title}</span>
+                </button>
+
+                {isOpen && (
+                  <div className="accordion-content">
+                    <p>{item.content}</p>
+                  </div>
+                )}
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
