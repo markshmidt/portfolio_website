@@ -12,7 +12,6 @@ import Skills from "./pages/Skills/Skills";
 import Interests from "./pages/Interests/Interests";
 function App() {
   const [preloaderDone, setPreloaderDone] = useState(false);
-  useHeaderScroll();
   return (
     <>
  

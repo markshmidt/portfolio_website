@@ -19,4 +19,24 @@
     align-items: center;
     justify-content: space-between;
   }
+  @media (max-width: 900px) {
+    footer {
+      position:static;
+    }
+  }
+  @media (max-width: 600px) {
+    footer {
+      display: none !important;
+    }
+  }
+  @media (max-height: 900px) {
+    body {
+      font-size: 0.95rem;
+    }
+  
+    section {
+      padding-top: 80px !important;
+      padding-bottom: 80px !important;
+    }
+  }
   

@@ -10,7 +10,6 @@
   font-weight: 500;
   line-height: 1.35;
   margin-bottom: 100px;
-  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
@@ -26,7 +25,8 @@
 /* === CARD === */
 .skill-card {
   display: flex;
-  align-items: flex-start; /* icon aligns to top/title */
+  align-items: flex-start; 
+  justify-content: center;
   gap: 18px; 
   line-height: 1.5;
   font-size: 18px;
@@ -99,7 +99,6 @@
 
   .skills-title {
     font-size: 30px;
-    letter-spacing: 0.1em;
     margin-bottom: 40px;
   }
 

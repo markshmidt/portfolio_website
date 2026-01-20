@@ -5,22 +5,22 @@ const facts = [
   {
     title: "Chess",
     content:
-      "I enjoy strategic thinking, long-term planning, and measuring progress over time (yes, I track ELO).",
+      "I fell in love with analyzing positions and thinking several moves ahead at the age of six, when my parents gave me the Harry Potter Magic Chess Set. I later won several school and college championships. Current ELO: 1600–1700.",
   },
   {
     title: "Reading",
     content:
-      "Mostly tech, psychology, and fiction. I like turning ideas into notes, systems, and better habits (and yes — I still love paper books).",
+      "When I was two, I begged my parents to teach me how to read because I got bored by just looking at books' pictures. Today, I cannot go to sleep without reading at least 50 pages — and yes, I still prefer paper books.",
   },
   {
     title: "Figure Skating",
     content:
-      "I love the mix of discipline and creativity — consistent practice, small improvements, and performing under pressure. I also have a first-class degree in figure skating.",
+      "I may no longer jump axels or perform Biellmann spins, but I still carry the values figure skating taught me: discipline, creativity, consistent practice, and performing under pressure. I also hold a first-class degree in synchronized figure skating.",
   },
   {
     title: "Movies",
     content:
-      "Quiet evenings with movies recharge me. Favorite genres include detective stories and science fiction — both train logical thinking.",
+      "Quiet movie nights recharge me, while packed theaters energize me. My favorite genres are detective films, thrillers, and science fiction — five stars on Letterboxd if it either blows my mind or makes me feel something real.",
   },
 ];
 
@@ -43,16 +43,17 @@ export default function Interests() {
         {/* LEFT */}
         <div className="facts-left">
           <p className="facts-intro">
-            There are a few things that keep me curious, focused, and motivated —
-            and that, oddly enough, help me work as a developer.
+            There are a few things that keep me curious, focused, and motivated -
+            and that, oddly enough, help me at work too.
           </p>
 
           <div className="fun-facts">
             <h3>Fun facts:</h3>
             <ul>
-              <li>I love building UI that feels “smooth” like skating.</li>
-              <li>I enjoy debugging because it feels like solving puzzles.</li>
-              <li>I’m happiest when I can measure progress (stats, charts, or ELO).</li>
+              <li>I enjoy building LEGO sets - they are my reminder that even the most complex results start with simple blocks.</li>
+              <li>I’m happiest when I can measure progress through stats, charts, or ELO ratings.</li>
+              <li>I have a soft spot for things that combine logic and creativity. I used to dream about publishing a detective novel.</li>
+              <li>Besides English, I also know Russian, Ukranian, German, French and a bit of ASL.</li>
             </ul>
           </div>
         </div>

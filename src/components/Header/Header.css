@@ -119,4 +119,49 @@ nav-links {
     background: rgba(19, 85, 191, 0.25);
     border-color: var(--color-accent);
   }
+  /* =========================
+   HEADER — MOBILE
+========================= */
+@media (max-width: 600px) {
+
+    .header-container {
+      padding: 10px 16px; /* shorter header */
+    }
   
+    /* Logo */
+    .logo-img {
+      height: 28px;
+    }
+  
+    /* Nav container */
+    .nav-links {
+      gap: 8px;
+    }
+  
+    /* Nav buttons */
+    .nav-links button {
+      font-size: 13px;
+      padding: 6px 10px;
+      border-radius: 999px;
+    }
+  
+    /* Disable hover motion on mobile */
+    .nav-links button:hover {
+      transform: none;
+      background: transparent;
+      border-color: transparent;
+    }
+  
+    /* Show-header button smaller */
+    #show-header-btn {
+      width: 40px;
+      height: 40px;
+      top: 12px;
+      right: 16px;
+    }
+  }
+  @media (min-width: 701px) {
+    #show-header-btn {
+      display: none !important;
+    }
+  }

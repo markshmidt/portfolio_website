@@ -39,6 +39,7 @@
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 44px;
   align-items: stretch;
+  margin-top: 90px;
 }
 
 /* card look */

@@ -77,7 +77,7 @@ const Home = ({ startAnimations }) => {
           }}
         >
           <h1 className="home-title">
-            MARIIA <br />SHMIDT
+            MARIIA SHMIDT
           </h1>
 
           <p className="home-eyebrow">

@@ -18,7 +18,7 @@ const projectsData = [
       "A full-stack Point of Sale (POS) web application built with Django. Includes order management, menu configuration, loyalty points, receipts, and admin analytics.",
     image: "/assets/img/coffeeshop.gif",
     github: "https://github.com/markshmidt/coffee-shop-app",
-    play: "https://mariia-shmidt-portfolio.com/coffeeshopapp/login",
+    play: "https://mariia-shmidt-portfolio.com/coffeeshopapp/",
   },
   {
     title: "Kamisado Game",
@@ -124,7 +124,7 @@ const Projects = () => {
       <div className="projects-footer">
           <a
           className="project-btn github-cta"
-          href="https://github.com/markshmidt/projects"
+          href="https://github.com/markshmidt/"
           target="_blank"
           rel="noopener noreferrer"
         >

@@ -13,12 +13,10 @@ const journey = [
   period: "Jan 2026",
   preview: "SolarPunk & Dance Radar — full-stack web application",
   details: [
-    "Developed full-stack application using Next.js, TypeScript, and REST APIs. under mentorship of senior developer",
+    "Developed full-stack application using Next.js, TypeScript, and React. under mentorship of senior developer",
     "Deployed production infrastructure using Vercel + GitHub workflow.",
     "Integrated Open Graph metadata and dynamic previews to improve link sharing and SEO across social platforms.",
     "Implemented analytics and user interaction tracking using PostHog, and worked with MongoDB for data storage, schema updates, and database migrations.",
-    "Collaborated on code reviews, debugging, and architectural decisions, gaining experience with scalable system design and maintainable codebases."
-  
   ],
   side: "right",
 },
@@ -27,8 +25,8 @@ const journey = [
   period: "Nov 2025",
   preview: "York Regional Educational Services (Volunteer Role)",
   details: [
-    "Supported data analysis and reporting for volunteer engagement programs using real operational datasets.", 
-    "Analyzed volunteer weekly/monthly activity, attendance, coaching sessions cancellations, hours logged, and engagement metrics using Python (Pandas, NumPy) and SQL-joints.", 
+    "Supported data analysis and reporting for volunteer engagement programs.", 
+    "Analyzed volunteer weekly/monthly activity, attendance, coaching sessions cancellations, hours logged, and engagement metrics using Python (Pandas, NumPy) and SQL-joints / DuckDB.", 
     "Created analytical reports and visualizations with Tableu, Plotly, Matplotlib and Seaborn", 
     "Worked extensively with spreadsheets (Excel & Google Sheets), including pivot tables, calculated fields, conditional logic, and data validation."
   
@@ -55,7 +53,6 @@ const journey = [
     "High academic performance (GPA: 3.8). Five times Dean's List of Honor Laureate.",
     "Team Lead for 2 years on multiple group projects, coordinating planning & collaboration.",
     "Designed full-stack systems using MERN stack, Spring Boot (microservices), ASP.NET, and JavaScript.",
-    "Developed mobile applications using Flutter and React Native.",
     "Data modeling, indexing, and optimization with MySQL, PostgreSQL, and MongoDB.",
     "Applied data analysis techniques using Pandas, NumPy, Seaborn, Scikit-learn, and Plotly.",
   ],
