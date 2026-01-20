@@ -112,4 +112,8 @@ body {
   .icon-accent {
     color: var(--color-accent);
   }
-  
+  @media (max-height: 900px) {
+    #main-page, #skills, #projects, #interests, #contact{
+      max-width: 1000px;
+    }
+  }
