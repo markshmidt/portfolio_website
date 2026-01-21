@@ -15,7 +15,7 @@ const projectsData = [
   {
     title: "Coffee Island POS",
     description:
-      "A full-stack Point of Sale (POS) web application built with Django. Includes order management, menu configuration, loyalty points, receipts, and admin analytics.",
+      "A full-stack Point of Sale (POS) web application built with Django. Includes order management, menu configuration, loyalty points, receipts, and admin analytics. Please see GitHub page for login details.",
     image: "/assets/img/coffeeshop.gif",
     github: "https://github.com/markshmidt/coffee-shop-app",
     play: "https://mariia-shmidt-portfolio.com/coffeeshopapp/",
