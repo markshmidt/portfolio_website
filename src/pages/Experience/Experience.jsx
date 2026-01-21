@@ -110,33 +110,24 @@ const itemVariants = {
 /* =======================
    COMPONENT
 ======================= */
-
 export default function JourneyTimeline() {
   const [openIndex, setOpenIndex] = useState(null);
-
-  const timelineRef = useRef(null);
   const modalRef = useRef(null);
 
   const isMobile = window.matchMedia("(max-width: 600px)").matches;
 
   useEffect(() => {
     if (!isMobile) return;
-  
+
     const handleOutside = (e) => {
       if (openIndex === null) return;
       if (modalRef.current?.contains(e.target)) return;
       setOpenIndex(null);
     };
-  
-    document.addEventListener("pointerdown", handleOutside);
-  
-    return () => {
-      document.removeEventListener("pointerdown", handleOutside);
-    };
-  }, [isMobile, openIndex]);
-  
-  
 
+    document.addEventListener("pointerdown", handleOutside);
+    return () => document.removeEventListener("pointerdown", handleOutside);
+  }, [isMobile, openIndex]);
 
   return (
     <motion.section
@@ -149,77 +140,85 @@ export default function JourneyTimeline() {
     >
       <h2 className="journey-title">Industry Experience</h2>
 
-      <motion.div className="journey-timeline" ref={timelineRef}>
+      <motion.div className="journey-timeline">
         <span className="journey-line" />
 
         {journey.map((item, index) => (
-         <motion.div
-         key={index}
-         className={`journey-item ${item.side} ${isMobile && openIndex === index ? "active" : ""}`}
-         variants={itemVariants}
-         data-mobile={isMobile}
-       >
-        
-            {/* Timeline dot */}
+          <motion.div
+            key={index}
+            className={`journey-item ${item.side} ${
+              isMobile && openIndex === index ? "active" : ""
+            }`}
+            variants={itemVariants}
+          >
             <span className="journey-dot" />
 
-            {/* Compact preview */}
+            {/* 🔥 HOVER CONTAINER */}
             <div
-  className="journey-preview"
-  onClick={(e) => {
-    if (!isMobile) return;
-    e.stopPropagation();
-    setOpenIndex(index);
-  }}
-  
->
-
-
-
-              <h3>{item.title}</h3>
-              <span className="journey-period">{item.period}</span>
-              <p>{item.preview}</p>
-            </div>
-
-            {/* Hover modal */}
-            <div
-              ref={openIndex === index ? modalRef : null}
-              className={`journey-modal ${item.side}`}
-              onClick={(e) => e.stopPropagation()}
+              className="journey-card"
+              onClick={(e) => {
+                if (!isMobile) return;
+                e.stopPropagation();
+                setOpenIndex(index);
+              }}
             >
 
+              {/* PREVIEW */}
+              <div className="journey-preview">
+                <h3>{item.title}</h3>
+                <span className="journey-period">{item.period}</span>
+                <p>{item.preview}</p>
+              </div>
 
-              <h3>{item.title}</h3>
-              <span className="journey-period">{item.period}</span>
+              {/* MODAL */}
+              <div
+                ref={openIndex === index ? modalRef : null}
+                className={`journey-modal ${item.side}`}
+              >
+                {isMobile && (
+                  <button
+                    type="button"
+                    className="journey-close"
+                    aria-label="Close"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setOpenIndex(null);
+                    }}
+                  >
+                    ×
+                  </button>
+                )}
 
-              <div className="journey-divider" />
+                <h3>{item.title}</h3>
+                <span className="journey-period">{item.period}</span>
 
-              <ul className="journey-list">
-                {item.details.map((d, i) => (
-                  <li key={i} className="journey-li">
-                    {typeof d === "string" ? (
-                      d
-                    ) : (
-                      <a
-                        href={d.url}
-                        className="journey-link"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <span className="journey-link-oneLine">
+                <div className="journey-divider" />
+
+                <ul className="journey-list">
+                  {item.details.map((d, i) => (
+                    <li key={i} className="journey-li">
+                      {typeof d === "string" ? (
+                        d
+                      ) : (
+                        <a
+                          href={d.url}
+                          className="journey-link"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
                           <span className="journey-link-title">{d.label}</span>
                           {d.meta && (
-                            <>
-                              <span className="journey-link-sep"> — </span>
-                              <span className="journey-link-meta">{d.meta}</span>
-                            </>
+                            <span className="journey-link-meta">
+                              {" "}
+                              — {d.meta}
+                            </span>
                           )}
-                        </span>
-                      </a>
-                    )}
-                  </li>
-                ))}
-              </ul>
+                        </a>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </motion.div>
         ))}
