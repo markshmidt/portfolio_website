@@ -19,10 +19,10 @@ const Contact = () => {
           <p className="contact-item">
              </p>
 
-          <p className="contact-item">
+          {/* <p className="contact-item">
             <strong>Location</strong><br />
             Toronto, Canada
-          </p>
+          </p> */}
 
           <div className="contact-links">
             <a href="mailto:masha.shmidt.04@gmail.com">

@@ -23,18 +23,16 @@
 
 /* GRID */
 .contact-grid{
+  gap: 20px; 
+  width: 100%;
+  max-width: 1200px;   
   display: grid;
   align-content: center;
   grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  max-width: 1200px;         
+  align-items: stretch;
+     
 }
 
-/* IMPORTANT: keep the form close to the left column */
-.contact-right{
-  justify-self: center; 
-  text-align: center;
-}
 
 /* LEFT */
 .contact-left {
@@ -67,7 +65,7 @@
 
 /* RIGHT */
 .contact-right {
-  justify-self: center;
+  justify-self: stretch;
 }
 
 
