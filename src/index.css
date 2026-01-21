@@ -117,3 +117,8 @@ body {
       max-width: 1000px;
     }
   }
+  @media(max-width: 768px) {
+    body{
+      background-image: url('/assets/img/mobile-back.jpg');
+  }
+}
