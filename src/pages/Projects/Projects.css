@@ -160,10 +160,10 @@
   font-size: 14px;
 }
 
-.projects-footer a {
+/* .projects-footer a {
   color: #00b7ff;
   text-decoration: none;
-}
+} */
 
 .projects-footer a:hover {
   text-decoration: underline;

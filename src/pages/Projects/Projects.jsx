@@ -123,7 +123,7 @@ const Projects = () => {
 
       <div className="projects-footer">
           <a
-          className="project-btn github-cta"
+          className=" btn"
           href="https://github.com/markshmidt/"
           target="_blank"
           rel="noopener noreferrer"
