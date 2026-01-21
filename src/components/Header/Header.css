@@ -1,167 +1,116 @@
-
+/* =========================
+   BASE HEADER
+========================= */
 .header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-  
-    background: var(--color-bg); /* solid background */
-    transition: transform 0.35s ease, opacity 0.35s ease;
-  }
-  
-  .header-container {
-    margin: 0 auto;
-    padding: 16px 28px;
-  
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  /* =========================
-     LOGO
-  ========================= */
-  
-  .logo-btn {
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-  }
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--color-bg);
+  z-index: 1000;
+}
 
-.logo-btn:hover .logo-img {
-    transform: scale(1.05);
-  }
-  
-  .logo-img {
-    height: 36px;
-    width: auto;
-    transition: transform 0.25s ease;
-  }
-  
-/* HEADER STYLING */
-nav-links {
-    list-style: none;
-    display: flex;
-    gap: 14px;
-    padding: 0;
-    margin: 0;
-  }
-  
-  /* nav buttons */
-  .nav-links button {
-    background: transparent;
-    border: 1px solid transparent;
-    color: var(--color-text);
-  
-    font-size: var(--fs-body);
-    font-family: var(--font-sans);
-    padding: 8px 14px;
-    border-radius: var(--radius-pill);
-  
-    cursor: pointer;
-    transition: 
-      background var(--transition-fast),
-      color var(--transition-fast),
-      border-color var(--transition-fast),
-      transform var(--transition-fast);
-  }
-  
-  .nav-links button:hover {
-    background: rgba(19, 85, 191, 0.15);
-    border-color: var(--color-accent);
-    color: var(--color-text);
-    transform: translateY(-1px);
-  }
-  
-  /* active section (optional later) */
-  .nav-links button.active {
-    background: var(--color-accent);
-    color: white;
-  }
-  
-  /* =========================
-     SHOW HEADER BUTTON
-  ========================= */
-  
-  #show-header-btn {
-    position: fixed;
-    top: 18px;
-    right: 24px;
-    z-index: 1100;
-  
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-  
-    background: var(--color-bg);
-    backdrop-filter: blur(6px);
-  
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  
-    opacity: 0;
-    pointer-events: none;
-    transform: translateY(-10px);
-    transition: all 0.3s ease;
-  }
-  
-  #show-header-btn.visible {
-    opacity: 1;
-    pointer-events: auto;
-    transform: translateY(0);
-  }
-  
-  #show-header-btn:hover {
-    background: rgba(19, 85, 191, 0.25);
-    border-color: var(--color-accent);
-  }
-  /* =========================
-   HEADER — MOBILE
+/* TOP BAR */
+.header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 28px;
+}
+
+/* LOGO */
+.logo-img {
+  height: 34px;
+  transition: transform 0.25s ease;
+}
+.logo-btn{
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}.header-nav button {
+  border: 1px solid transparent;
+  border-radius: 999px;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.header-nav button:hover {
+  background: rgba(19, 85, 191, 0.15);
+  border-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-1px);
+}
+
+
+/* NAV BASE */
+.header-nav {
+  display: flex;
+  gap: 16px;
+}
+
+.header-nav button {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 6px 10px;
+}
+
+/* MENU BUTTON (hidden on desktop) */
+.menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 22px;
+  color: white;
+  cursor: pointer;
+}
+
+/* =========================
+   DESKTOP
+========================= */
+.desktop-nav {
+  display: flex;
+}
+
+.mobile-nav {
+  display: none;
+}
+
+/* =========================
+   MOBILE
 ========================= */
 @media (max-width: 600px) {
+  /* Desktop nav disappears */
+  .desktop-nav {
+    display: none;
+  }
 
-    .header-container {
-      padding: 10px 16px; /* shorter header */
-    }
-  
-    /* Logo */
-    .logo-img {
-      height: 28px;
-    }
-  
-    /* Nav container */
-    .nav-links {
-      gap: 8px;
-    }
-  
-    /* Nav buttons */
-    .nav-links button {
-      font-size: 13px;
-      padding: 6px 10px;
-      border-radius: 999px;
-    }
-  
-    /* Disable hover motion on mobile */
-    .nav-links button:hover {
-      transform: none;
-      background: transparent;
-      border-color: transparent;
-    }
-  
-    /* Show-header button smaller */
-    #show-header-btn {
-      width: 40px;
-      height: 40px;
-      top: 12px;
-      right: 16px;
-    }
+  /* Menu button appears */
+  .menu-btn {
+    display: block;
   }
-  @media (min-width: 701px) {
-    #show-header-btn {
-      display: none !important;
-    }
+
+  /* Mobile nav (collapsible) */
+  .mobile-nav {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-6px);
+    transition:
+      max-height 0.35s ease,
+      opacity 0.25s ease,
+      transform 0.25s ease;
+    padding: 0 18px;
   }
+
+  .header.open .mobile-nav {
+    max-height: 260px;
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

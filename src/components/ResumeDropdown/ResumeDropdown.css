@@ -26,7 +26,7 @@
     position: absolute;
     top: calc(100% + 12px);
     left: 50%;
-    transform: translateX(-50%); /* ✅ perfect centering */
+    transform: translateX(-50%); 
     min-width: 300px;
     min-width: 280px;
     background: rgba(10, 25, 60, 0.95);
@@ -123,4 +123,18 @@
   .resume-item small {
     font-size: 11px;
   }
+}
+@media (max-height: 800px){
+
+  /* Dropdown menu */
+  .resume-menu {
+    top: auto;                    /* disable downwards */
+    bottom: calc(100% + 10px);    /* open upwards */
+    transform: translateX(-50%);
+    min-width: 220px;
+    max-width: 260px;
+    padding: 6px;
+    border-radius: 12px;
+  }
+
 }

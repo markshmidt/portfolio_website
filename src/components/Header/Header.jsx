@@ -1,64 +1,54 @@
-import React, { useRef } from "react";
+import { useState } from "react";
 import "./Header.css";
-import { useHeaderScroll } from "./headerScroll";
 
 const scrollToSection = (id) => {
   const el = document.getElementById(id);
   if (!el) return;
-
   el.scrollIntoView({ behavior: "smooth", block: "start" });
 };
 
-const Header = () => {
-  const headerRef = useRef(null);
-  const showBtnRef = useRef(null);
-
-  useHeaderScroll({
-    headerRef,
-    showBtnRef,
-    breakpointPx: 700,
-  });
-
-  const showHeader = () => {
-    headerRef.current.style.transform = "translateY(0)";
-    headerRef.current.style.opacity = "1";
-    showBtnRef.current.classList.remove("visible");
-    showBtnRef.current.style.display = "none";
-  };
+export default function Header() {
+  const [open, setOpen] = useState(false);
 
   return (
-    <>
-      <header className="header" ref={headerRef}>
-        <div className="header-container">
-          <button
-            className="logo-btn"
-            onClick={() => scrollToSection("mainContent")}
-          >
-            <img src="/assets/img/logo.png" alt="Logo" className="logo-img" />
-          </button>
+    <header className={`header ${open ? "open" : ""}`}>
+      <div className="header-top">
+        {/* LOGO — LEFT */}
+        <button
+          className="logo-btn"
+          onClick={() => scrollToSection("mainContent")}
+          aria-label="Go to top"
+        >
+          <img src="/assets/img/logo.png" alt="Logo" className="logo-img" />
+        </button>
 
-          <nav>
-            <ul className="nav-links">
-              <button onClick={() => scrollToSection("experience")}>Experience</button>
-              <button onClick={() => scrollToSection("skills")}>Skills</button>
-              <button onClick={() => scrollToSection("projects")}>Projects</button>
-              <button onClick={() => scrollToSection("interests")}>Interests</button>
-              <button onClick={() => scrollToSection("contact")}>Contact</button>
-            </ul>
-          </nav>
-        </div>
-      </header>
+        {/* DESKTOP NAV */}
+        <nav className="header-nav desktop-nav">
+          <button onClick={() => scrollToSection("experience")}>Experience</button>
+          <button onClick={() => scrollToSection("skills")}>Skills</button>
+          <button onClick={() => scrollToSection("projects")}>Projects</button>
+          <button onClick={() => scrollToSection("interests")}>Interests</button>
+          <button onClick={() => scrollToSection("contact")}>Contact</button>
+        </nav>
 
-      <button
-        id="show-header-btn"
-        ref={showBtnRef}
-        onClick={showHeader}
-        aria-label="Show Header"
-      >
-        ↑
-      </button>
-    </>
+        {/* MOBILE MENU BUTTON */}
+        <button
+          className="menu-btn"
+          aria-label="Toggle menu"
+          onClick={() => setOpen(!open)}
+        >
+          {open ? "✕" : "☰"}
+        </button>
+      </div>
+
+      {/* MOBILE NAV */}
+      <nav className="header-nav mobile-nav">
+        <button onClick={() => scrollToSection("experience")}>Experience</button>
+        <button onClick={() => scrollToSection("skills")}>Skills</button>
+        <button onClick={() => scrollToSection("projects")}>Projects</button>
+        <button onClick={() => scrollToSection("interests")}>Interests</button>
+        <button onClick={() => scrollToSection("contact")}>Contact</button>
+      </nav>
+    </header>
   );
-};
-
-export default Header;
+}

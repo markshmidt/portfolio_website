@@ -15,7 +15,6 @@
     font-weight: 500;
     line-height: 1.35;
     margin-bottom: 90px;
-    letter-spacing: 0.08em;
     text-transform: uppercase;
   margin-bottom: 24px;
 }
@@ -89,7 +88,6 @@
 .project-info h2 {
   color: #ffffff;
   font-size: var(--fs-card-title);
-  letter-spacing: 1px;
   text-transform: uppercase;
   margin: 6px 0 10px;
 }
@@ -120,14 +118,13 @@
   text-decoration: none;
   font-weight: 700;
   font-size: 14px;
-  letter-spacing: 0.5px;
   transition: transform 0.2s ease, box-shadow 0.2s ease,
     background 0.2s ease, border-color 0.2s ease;
   cursor: pointer;
   user-select: none;
 }
 
-/* primary = Try it live / View on GitHub */
+
 .project-btn.primary {
   background: var(--color-accent);
   color: var(--color-text);
@@ -137,6 +134,7 @@
 .project-btn.primary:hover {
   background: var(--color-accent-active);
   transform: translateY(-2px);
+  text-decoration: none;
 }
 
 .project-btn.secondary {
@@ -147,6 +145,7 @@
 
 .project-btn.secondary:hover {
   border-color: var(--color-accent);
+  text-decoration: none;
 }
 
 
@@ -160,13 +159,10 @@
   font-size: 14px;
 }
 
-/* .projects-footer a {
-  color: #00b7ff;
-  text-decoration: none;
-} */
 
 .projects-footer a:hover {
-  text-decoration: underline;
+  text-decoration: none;
+  background: var(--color-accent-active);
 }
 
 /* CTA button to GitHub */
@@ -176,11 +172,6 @@
   color: var(--color-text);
   font-size: large;
 }
-
-.project-btn.github-cta:hover {
-  background: rgba(19, 85, 191, 0.15);
-}
-
 
 /* =========================
    RESPONSIVE

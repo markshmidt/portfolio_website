@@ -1,14 +1,8 @@
 import { useEffect } from "react";
-
-export const useHeaderScroll = ({
-  headerRef,
-  showBtnRef,
-  breakpointPx = 700,
-}) => {
+export const useHeaderScroll = ({ headerRef, showBtnRef, breakpointPx = 600 }) => {
   useEffect(() => {
     const header = headerRef.current;
     const showBtn = showBtnRef.current;
-
     if (!header || !showBtn) return;
 
     const isMobile = () => window.innerWidth <= breakpointPx;
@@ -18,36 +12,35 @@ export const useHeaderScroll = ({
 
     const onScroll = () => {
       if (!isMobile()) {
-        // Reset on desktop
-        header.style.transform = "translateY(0)";
-        header.style.opacity = "1";
+        header.classList.remove("hidden");
         showBtn.classList.remove("visible");
-        showBtn.style.display = "none";
         headerVisible = true;
         return;
       }
 
-      const scrollTop =
-        window.pageYOffset || document.documentElement.scrollTop;
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
 
-      if (scrollTop > lastScrollTop && scrollTop > 80 && headerVisible) {
-        header.style.transform = "translateY(-100%)";
-        header.style.opacity = "0";
-        showBtn.style.display = "flex";
+      if (
+        scrollTop - lastScrollTop > 12 &&
+        scrollTop > 100 &&
+        headerVisible
+      ) {
+        header.classList.add("hidden");
         showBtn.classList.add("visible");
         headerVisible = false;
-      } else if (scrollTop < lastScrollTop && !headerVisible) {
-        header.style.transform = "translateY(0)";
-        header.style.opacity = "1";
+      } else if (
+        lastScrollTop - scrollTop > 12 &&
+        !headerVisible
+      ) {
+        header.classList.remove("hidden");
         showBtn.classList.remove("visible");
-        showBtn.style.display = "none";
         headerVisible = true;
       }
 
-      lastScrollTop = Math.max(0, scrollTop);
+      lastScrollTop = scrollTop;
     };
 
-    window.addEventListener("scroll", onScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", onScroll);
 
     return () => {

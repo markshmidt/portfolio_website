@@ -10,7 +10,7 @@ const facts = [
   {
     title: "Reading",
     content:
-      "When I was two, I begged my parents to teach me how to read because I got bored by just looking at books' pictures. Today, I cannot go to sleep without reading at least 50 pages — and yes, I still prefer paper books.",
+      "When I was two, I begged my parents to teach me how to read because I got bored by just looking at books' pictures. Today, I cannot go to sleep without reading at least 50 pages - and yes, I still prefer paper books.",
   },
   {
     title: "Figure Skating",
@@ -53,7 +53,7 @@ export default function Interests() {
               <li>I enjoy building LEGO sets - they are my reminder that even the most complex results start with simple blocks.</li>
               <li>I’m happiest when I can measure progress through stats, charts, or ELO ratings.</li>
               <li>I have a soft spot for things that combine logic and creativity. I used to dream about publishing a detective novel.</li>
-              <li>Besides English, I also know Russian, Ukranian, German, French and a bit of ASL.</li>
+              <li>Besides English, I've also learned Russian, Ukrainian, German, French and a bit of ASL.</li>
             </ul>
           </div>
         </div>

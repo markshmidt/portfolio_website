@@ -92,6 +92,7 @@ body {
   .btn:hover {
     transform: translateY(-1px);
     filter: brightness(1.05);
+    background: var(--color-accent-active);
   }
   
   .btn:active {

@@ -37,6 +37,9 @@
   font-size: 18px;
   cursor: pointer;
 }
+.contact-form button:hover{
+  background: var(--color-accent-active);
+}
 .contact-form input,
 .contact-form textarea{
   width: 100%;
