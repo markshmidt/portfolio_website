@@ -32,7 +32,7 @@ const ResumeDropdown = () => {
       {open && (
         <div className="resume-menu">
           <a
-            href="/assets/files/MariiaShmidtDeveloperResume.pdf"
+            href="/assets/files/Mariia_Shmidt_Resume_Fullstack.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="resume-item"
