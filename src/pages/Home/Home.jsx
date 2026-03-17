@@ -15,10 +15,10 @@ const Home = ({ startAnimations }) => {
       // stagger text AFTER image
       // IMAGE
 
-    // TEXT delay
-    setTimeout(() => {
-      textControls.start("visible");
-    }, 120); 
+      // TEXT delay
+      setTimeout(() => {
+        textControls.start("visible");
+      }, 120);
     }
   }, [startAnimations, imageControls, textControls]);
 
@@ -85,9 +85,10 @@ const Home = ({ startAnimations }) => {
           </p>
 
           <p className="home-subtitle">
-            I build web applications with clean logic, thoughtful design,
-            and real-world usability — with a strong foundation in data analytics
-            and applied data science.
+            In both chess and data, the advantage goes to those who can see patterns others miss.
+            From database to UI, every layer is part of the strategy. From backend logic to frontend experience, every detail matters.
+            I am engineering data-driven solutions the way I play chess: full-stack, strategic, and several moves ahead.
+
           </p>
 
           <div className="home-actions">

@@ -22,6 +22,11 @@ const facts = [
     content:
       "Quiet movie nights recharge me, while packed theaters energize me. My favorite genres are detective films, thrillers, and science fiction — five stars on Letterboxd if it either blows my mind or makes me feel something real.",
   },
+  {
+    title: "Customer Service",
+    content:
+      "Working as a barista taught me to manage high-volume workflows, optimize order flow, and deliver consistent results under pressure. High quality coffee beans producing endless free flat whites and constant networking with customers are great perks too!",
+  },
 ];
 
 export default function Interests() {
@@ -70,7 +75,7 @@ export default function Interests() {
                   onClick={() => toggle(index)}
                 >
                   <span className={`accordion-icon ${isOpen ? "is-open" : ""}`}>
-                  +
+                    +
                   </span>
                   <span className="accordion-title">{item.title}</span>
                 </button>

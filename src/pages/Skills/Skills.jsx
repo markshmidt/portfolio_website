@@ -24,14 +24,14 @@ const skills = [
   {
     title: "PYTHON",
     text:
-      "Django, Flask, FastAPI • NumPy, Pandas, DuckDB • Matplotlib/Plotly • Scikit-learn, TensorFlow, PyTorch, Keras ",
-      icon: PythonIcon,
-    
+      "Django, Flask, FastAPI • NumPy, Pandas, DuckDB • Matplotlib/Plotly • Scikit-learn, TensorFlow, PyTorch, Keras • Dagster, SQLAlchemy, SQLModel, FastAPI, Langchain ",
+    icon: PythonIcon,
+
   },
   {
     title: "Data Analysis & Data Science",
     text:
-      "Excel/Google Sheets (pivots, XLOOKUP) • Tableau dashboards • R programming for visualization • data cleaning, modeling, indexing • Relational and NoSQL databases",
+      "Excel/Google Sheets (pivots, XLOOKUP) • Tableau dashboards • R programming (tidyverse visuals) • data engineering, mining, modeling, indexing • Relational and NoSQL databases",
     icon: (
       <svg viewBox="0 0 24 24">
         <path d="M3 3v18h18M7 15l3-3 4 4 5-6" />
@@ -41,15 +41,15 @@ const skills = [
   {
     title: "Frontend",
     text:
-    "React + TypeScript / JS • responsive UI • component-driven layouts • accessibility basics",
+      "React + TypeScript / JS • responsive UI • component-driven layouts • accessibility basics",
     icon: (
       <svg viewBox="0 0 24 24">
-      <rect x="3" y="4" width="18" height="12" rx="2" />
-      <path d="M8 20h8" />
-      <path d="M12 16v4" />
-      <path d="M9 9l-2 2 2 2" />
-      <path d="M15 9l2 2-2 2" />
-    </svg>
+        <rect x="3" y="4" width="18" height="12" rx="2" />
+        <path d="M8 20h8" />
+        <path d="M12 16v4" />
+        <path d="M9 9l-2 2 2 2" />
+        <path d="M15 9l2 2-2 2" />
+      </svg>
     ),
   },
 
@@ -59,10 +59,10 @@ const skills = [
       "Next.js / Express • REST APIs • authentication/authorization • SQL/ORM • deployment with Nginx + Gunicorn & Vercel",
     icon: (
       <svg viewBox="0 0 24 24">
-    <ellipse cx="12" cy="6" rx="7" ry="3" />
-    <path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6" />
-    <path d="M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6" />
-  </svg>
+        <ellipse cx="12" cy="6" rx="7" ry="3" />
+        <path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6" />
+        <path d="M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6" />
+      </svg>
     ),
   },
   {
@@ -71,11 +71,11 @@ const skills = [
       "Team lead experience • Sprint planning • Agile/Scrum ceremonies • GitHub / GitLab • code reviews + PR feedback • Slack / Linear",
     icon: (
       <svg viewBox="0 0 24 24">
-      <circle cx="9" cy="8" r="3" />
-      <circle cx="17" cy="8" r="3" />
-      <path d="M2 20c0-3 4-5 7-5" />
-      <path d="M15 15c3 0 7 2 7 5" />
-    </svg>
+        <circle cx="9" cy="8" r="3" />
+        <circle cx="17" cy="8" r="3" />
+        <path d="M2 20c0-3 4-5 7-5" />
+        <path d="M15 15c3 0 7 2 7 5" />
+      </svg>
     ),
   },
   {
@@ -84,14 +84,14 @@ const skills = [
       "Debugging + root-cause analysis • break down requirements into tasks • fast onboarding to new tools  or stack",
     icon: (
       <svg viewBox="0 0 24 24">
-      <path d="M12 3a6 6 0 0 1 6 6c0 2-1 3-2 4s-1.5 1.5-1.5 3H9.5c0-1.5-.5-2-1.5-3S6 11 6 9a6 6 0 0 1 6-6Z" />
-      <path d="M9 20h6" />
-      <path d="M10 23h4" />
-      <path d="M9.5 10.5h5" />
-    </svg>
+        <path d="M12 3a6 6 0 0 1 6 6c0 2-1 3-2 4s-1.5 1.5-1.5 3H9.5c0-1.5-.5-2-1.5-3S6 11 6 9a6 6 0 0 1 6-6Z" />
+        <path d="M9 20h6" />
+        <path d="M10 23h4" />
+        <path d="M9.5 10.5h5" />
+      </svg>
     ),
   }
-  
+
 ];
 import { useEffect, useRef } from "react";
 import "./Skills.css";
@@ -130,8 +130,8 @@ export default function Skills() {
           >
             <div className="skill-icon">{skill.icon}</div>
             <div className="skill-content">
-            <h3>{skill.title}</h3>
-            <p>{skill.text}</p>
+              <h3>{skill.title}</h3>
+              <p>{skill.text}</p>
             </div>
           </div>
         ))}
