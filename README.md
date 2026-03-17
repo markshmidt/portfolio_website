@@ -30,4 +30,4 @@ This is the source code for my personal portfolio website, built with **React** 
 # Contact
 Portfolio Contact Page: mariia-shmidt-portfolio.com/contact
 
-LinkedIn: [linkedin.com/in/mariia-shmidt](https://www.linkedin.com/in/mariia-shmidt-14a084324/)
+LinkedIn: [linkedin.com/in/mariia-shmidt-dev](https://www.linkedin.com/in/mariia-shmidt-dev/)
