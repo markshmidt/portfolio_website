@@ -24,14 +24,14 @@ const skills = [
   {
     title: "PYTHON",
     text:
-      "Django, Flask, FastAPI • NumPy, Pandas, DuckDB • Matplotlib/Plotly • Scikit-learn, TensorFlow, PyTorch, Keras • Dagster, SQLAlchemy, SQLModel, FastAPI, Langchain ",
+      "Django, Flask, FastAPI • NumPy, Pandas, DuckDB • Matplotlib/Plotly • Dagster, SQLAlchemy, SQLModel, FastAPI, Langchain • PySpark, Databricks, Airflow",
     icon: PythonIcon,
 
   },
   {
     title: "Data Analysis & Data Science",
     text:
-      "Excel/Google Sheets (pivots, XLOOKUP) • Tableau dashboards • R programming (tidyverse visuals) • data engineering, mining, modeling, indexing • Relational and NoSQL databases",
+      "Excel/Google Sheets (pivots, XLOOKUP) • Tableau / PowerBI dashboards • R programming (tidyverse visuals) • data engineering / big data processing • Relational and NoSQL databases",
     icon: (
       <svg viewBox="0 0 24 24">
         <path d="M3 3v18h18M7 15l3-3 4 4 5-6" />
@@ -41,7 +41,7 @@ const skills = [
   {
     title: "Frontend",
     text:
-      "React + TypeScript / JS • responsive UI • component-driven layouts • accessibility basics",
+      "React + TypeScript / JS • Streamlit / Shadcn UI • responsive UI • component-driven layouts • accessibility basics",
     icon: (
       <svg viewBox="0 0 24 24">
         <rect x="3" y="4" width="18" height="12" rx="2" />
@@ -56,7 +56,7 @@ const skills = [
   {
     title: "Backend",
     text:
-      "Next.js / Express • REST APIs • authentication/authorization • SQL/ORM • deployment with Nginx + Gunicorn & Vercel",
+      "Next.js / Express • REST APIs • SQL/ORM • deployment with Nginx + Gunicorn & Vercel • Docker",
     icon: (
       <svg viewBox="0 0 24 24">
         <ellipse cx="12" cy="6" rx="7" ry="3" />
@@ -81,7 +81,7 @@ const skills = [
   {
     title: "Problem Solving & Adaptability",
     text:
-      "Debugging + root-cause analysis • break down requirements into tasks • fast onboarding to new tools  or stack",
+      "Debugging + root-cause analysis • fast onboarding to new tools or stack • AI-proficient with Claude, Cursor Agents and ChatGPT",
     icon: (
       <svg viewBox="0 0 24 24">
         <path d="M12 3a6 6 0 0 1 6 6c0 2-1 3-2 4s-1.5 1.5-1.5 3H9.5c0-1.5-.5-2-1.5-3S6 11 6 9a6 6 0 0 1 6-6Z" />

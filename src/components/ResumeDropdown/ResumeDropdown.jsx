@@ -40,12 +40,12 @@ const ResumeDropdown = () => {
             <FileCode2 size={18} />
             <span>
               <strong>Software Developer</strong>
-              <small>Backend · Frontend · Full-Stack</small>
+              <small>Backend · Frontend · Full-Stack · Data Science</small>
             </span>
           </a>
 
           <a
-            href="/assets/files/MariiaShmidtDataAnalystResume.pdf"
+            href="/assets/files/Mariia_Shmidt_Resume_DataEngineer.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="resume-item"
@@ -53,7 +53,7 @@ const ResumeDropdown = () => {
             <BarChart3 size={18} />
             <span>
               <strong>Data Analytics</strong>
-              <small>Python · SQL · Pandas · Dashboards</small>
+              <small>Python · SQL · PySpark · Dashboards · Data Engineering</small>
             </span>
           </a>
         </div>

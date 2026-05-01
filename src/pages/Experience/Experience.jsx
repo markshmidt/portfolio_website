@@ -9,15 +9,15 @@ import { useState, useEffect, useRef } from "react";
 
 const journey = [
   {
-    title: "Fullstack Developer",
+    title: "Fullstack Developer & Data Analyst",
     period: "Jan 2026 - Today",
     preview: "SolarPunk & Dance Radar — data-driven full-stack platform",
     details: [
       "Contributed to full-stack platform development using Next.js, React, TypeScript and Vercel.",
-      "Implemented product analytics (PostHog) and event-driven workflows (Inngest) to track engagement and user behavior.",
+      "Implemented product analytics (PostHog API) and event-driven workflows (Inngest) to track engagement and user behavior.",
       "Engineered GraphDB models (Neo4j), enabling recommendations, similarity queries and interest trends.",
       "Integrated PostgreSQL, MongoDB, and Airtable for structured and semi-structured data storage and querying.",
-      "Optimized SEO and sharing with Open Graph metadata and dynamic previews across platforms.",
+      "Developed an admin analytics dashboard combining 5+ data sources into a unified dataset for KPI tracking across the platform.",
     ],
     side: "right",
   },
@@ -27,9 +27,9 @@ const journey = [
     preview: "York Regional Educational Services (Volunteer Role)",
     details: [
       "Supported data analysis and reporting for volunteer engagement programs.",
-      "Analyzed volunteer weekly/monthly activity, attendance, coaching sessions cancellations, hours logged, and engagement metrics using Python (Pandas, NumPy) and SQL-joints / DuckDB.",
-      "Produced regional and national reports on volunteer hours logged, participation rates, and engagement metrics, helping stakeholders track program performance across locations.",
-      "Created analytical reports and visualizations with Tableu, Plotly, Matplotlib and Seaborn",
+      "Analyzed volunteer weekly/monthly activity, attendance, and coaching sessions cancellations using Python (Pandas, NumPy) and SQL-joints / DuckDB.",
+      "Produced regional and national reports on volunteer participation rates, and engagement metrics, helping stakeholders track program performance across locations.",
+      "Created analytical reports and visualizations with Tableu, PowerBI, Plotly, Matplotlib and Seaborn",
       "Worked extensively with spreadsheets (Excel & Google Sheets), including pivot tables, conditional logic, and data validation."
 
     ],
