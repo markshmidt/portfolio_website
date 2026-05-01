@@ -80,7 +80,7 @@ const Projects = () => {
       <div className="project-list">
         {projectsData.map((project, index) => (
           <div className="project-card" key={index}>
-            <img src={project.image} alt={project.title} />
+            <img src={project.image} alt={project.title} loading="lazy" />
 
             <div className="project-info">
               <h2>{project.title}</h2>
@@ -122,7 +122,7 @@ const Projects = () => {
       </div>
 
       <div className="projects-footer">
-          <a
+        <a
           className=" btn"
           href="https://github.com/markshmidt/"
           target="_blank"

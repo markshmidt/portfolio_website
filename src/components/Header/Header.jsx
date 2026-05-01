@@ -19,7 +19,7 @@ export default function Header() {
           onClick={() => scrollToSection("mainContent")}
           aria-label="Go to top"
         >
-          <img src="/assets/img/logo.png" alt="Logo" className="logo-img" />
+          <img src="/assets/img/logo.png" alt="Mariia Shmidt" className="logo-img" />
         </button>
 
         {/* DESKTOP NAV */}

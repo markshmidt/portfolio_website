@@ -46,8 +46,9 @@ const Home = ({ startAnimations }) => {
         >
           <motion.img
             src={profileImage}
-            alt="Mari Shmidt"
+            alt="Mariia Shmidt — Software Developer and Data Analyst"
             className="profile-img"
+            fetchPriority="high"
             onClick={() =>
               window.open(
                 "https://www.linkedin.com/in/mariia-shmidt-dev",

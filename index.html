@@ -29,7 +29,56 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfilePage",
+      "mainEntity": {
+        "@type": "Person",
+        "name": "Mariia Shmidt",
+        "url": "https://mariia-shmidt-portfolio.com",
+        "image": "https://mariia-shmidt-portfolio.com/assets/img/profile.png",
+        "jobTitle": ["Software Developer", "Data Analyst"],
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Toronto",
+          "addressRegion": "ON",
+          "addressCountry": "CA"
+        },
+        "sameAs": [
+          "https://www.linkedin.com/in/mariia-shmidt-dev"
+        ],
+        "knowsAbout": [
+          "JavaScript", "TypeScript", "React", "Next.js", "Node.js",
+          "Python", "Java", "C#", "Dart", "Flutter",
+          "PostgreSQL", "MySQL", "MongoDB", "Neo4j",
+          "Data Analysis", "Machine Learning", "Full-Stack Development"
+        ],
+        "alumniOf": {
+          "@type": "EducationalOrganization",
+          "name": "George Brown College",
+          "url": "https://www.georgebrown.ca"
+        },
+        "hasCredential": [
+          {
+            "@type": "EducationalOccupationalCredential",
+            "name": "Full Stack Software Developer",
+            "credentialCategory": "Certificate",
+            "recognizedBy": { "@type": "Organization", "name": "IBM" }
+          },
+          {
+            "@type": "EducationalOccupationalCredential",
+            "name": "Google Data Analytics",
+            "credentialCategory": "Certificate",
+            "recognizedBy": { "@type": "Organization", "name": "Google" }
+          }
+        ]
+      }
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>
