@@ -1,6 +1,7 @@
-// src/components/Projects/Projects.jsx
-import React from "react";
+import React, { useState } from "react";
 import "./Projects.css";
+
+const CATEGORIES = ["All", "Software Dev", "Data & Analytics"];
 
 const projectsData = [
   {
@@ -11,6 +12,8 @@ const projectsData = [
     github:
       "https://github.com/markshmidt/projects/tree/main/JavaProjects/gomoku-web",
     play: "https://mariia-shmidt-portfolio.com/gomoku",
+    category: "Software Dev",
+    stack: ["Java", "Spring Boot", "JavaScript"],
   },
   {
     title: "Coffee Island POS",
@@ -19,6 +22,8 @@ const projectsData = [
     image: "/assets/img/coffeeshop.gif",
     github: "https://github.com/markshmidt/coffee-shop-app",
     play: "https://mariia-shmidt-portfolio.com/coffeeshopapp/",
+    category: "Software Dev",
+    stack: ["Python", "Django", "PostgreSQL"],
   },
   {
     title: "Kamisado Game",
@@ -27,64 +32,80 @@ const projectsData = [
     image: "/assets/img/kamisado.gif",
     github:
       "https://github.com/markshmidt/projects/tree/main/PythonProjects/kamisado",
-  },
-  // {
-  //   title: "Tic-Tac-Toe Game",
-  //   description:
-  //     "A strategic Tic-Tac-Toe game deployed on Tomcat using Java Servlets and JSP, demonstrating HTTP request handling and server-side rendering.",
-  //   image: "/assets/img/tic-tac-toe.gif",
-  //   github:
-  //     "https://github.com/markshmidt/projects/tree/main/JavaProjects/project-servlet",
-  // },
-
-  /* --- UNUSED / ARCHIVED PROJECTS ---
-  
-  {
-    title: "Kamisado Game",
-    description:
-      "Interactive digital version of the strategic board game Kamisado using Python OOP and Pygame.",
-    image: "/assets/img/kamisado.gif",
-    github:
-      "https://github.com/markshmidt/projects/tree/main/PythonProjects/kamisado",
+    category: "Software Dev",
+    stack: ["Python", "Pygame", "OOP"],
   },
   {
-    title: "Racing Game",
+    title: "CaRMS Data Platform",
     description:
-      "A JavaFX racing game built with JavaRush graphics engine.",
-    image: "/assets/img/project-maven.gif",
-    github:
-      "https://github.com/markshmidt/projects/tree/main/JavaProjects/project-maven",
+      "AI-enabled data platform for Canadian medical residency programs. Features Dagster ETL pipelines, vector search with pgvector, a RAG assistant powered by LangChain, and an interactive Streamlit dashboard.",
+    image: "/assets/img/placeholder-carms.svg",
+    github: "https://github.com/markshmidt/carms-data-platform",
+    category: "Data & Analytics",
+    stack: ["Dagster", "PostgreSQL", "FastAPI", "LangChain", "Streamlit"],
   },
   {
-    title: "HRM & Payroll System",
+    title: "Canada Summer Jobs Pipeline",
     description:
-      "JavaFX-based HRM and Payroll system with reporting features.",
-    image: "/assets/img/management.gif",
-    github:
-      "https://github.com/markshmidt/projects/tree/main/JavaProjects/project-management",
+      "Data pipeline transforming 137,000+ government grant records into clean Delta tables using medallion architecture. Orchestrated with Apache Airflow and visualized through Power BI dashboards for YRES.",
+    image: "/assets/img/placeholder-summerjobs.svg",
+    github: "https://github.com/markshmidt/summer-jobs-yres-data-platform",
+    category: "Data & Analytics",
+    stack: ["Airflow", "Databricks", "PySpark", "Delta Lake", "Power BI"],
   },
-
-  */
+  {
+    title: "Data Warehouse",
+    description:
+      "End-to-end data warehouse with bronze/silver/gold medallion architecture. Implements star schema modeling with dimension and fact tables, optimized for BI tools like Tableau and Power BI.",
+    image: "/assets/img/placeholder-warehouse.svg",
+    github: "https://github.com/markshmidt/datawarehouse-project",
+    category: "Data & Analytics",
+    stack: ["PostgreSQL", "Docker", "SQL", "Star Schema"],
+  },
 ];
 
 const Projects = () => {
+  const [active, setActive] = useState("All");
+
+  const filtered =
+    active === "All"
+      ? projectsData
+      : projectsData.filter((p) => p.category === active);
+
   return (
     <section className="projects-container" id="projects">
       <h2>Featured Projects</h2>
 
-      {/* <p className="projects-description">
-        A curated selection of projects showcasing my experience in full-stack
-        development, backend systems, and interactive web applications.
-      </p> */}
+      <div className="project-filters">
+        {CATEGORIES.map((cat) => (
+          <button
+            key={cat}
+            className={`filter-btn${active === cat ? " active" : ""}`}
+            onClick={() => setActive(cat)}
+          >
+            {cat}
+          </button>
+        ))}
+      </div>
 
       <div className="project-list">
-        {projectsData.map((project, index) => (
+        {filtered.map((project, index) => (
           <div className="project-card" key={index}>
             <img src={project.image} alt={project.title} loading="lazy" />
 
             <div className="project-info">
               <h2>{project.title}</h2>
               <p>{project.description}</p>
+
+              {project.stack && (
+                <div className="project-stack">
+                  {project.stack.map((tech) => (
+                    <span key={tech} className="stack-tag">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              )}
 
               <div className="project-actions">
                 {project.play ? (

@@ -19,6 +19,56 @@
   margin-bottom: 24px;
 }
 
+/* filter tabs */
+.project-filters {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.filter-btn {
+  padding: 10px 22px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: transparent;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-btn:hover {
+  border-color: var(--color-accent);
+  color: var(--color-text);
+}
+
+.filter-btn.active {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-text);
+  box-shadow: 0 4px 16px rgba(19, 85, 191, 0.35);
+}
+
+/* tech stack tags */
+.project-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 12px;
+}
+
+.stack-tag {
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 12px;
+  font-weight: 500;
+}
+
 /* short subtitle (keep it subtle like screenshot) */
 .projects-description {
   max-width: 900px;
