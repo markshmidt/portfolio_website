@@ -4,7 +4,7 @@ import "./Footer.css";
 const Footer = () => (
   <footer className="footer">
     <div className="footer-container">
-      <p>©2025 Mariia Shmidt.</p>
+      <p>&copy;{new Date().getFullYear()} Mariia Shmidt.</p>
     </div>
   </footer>
 );
